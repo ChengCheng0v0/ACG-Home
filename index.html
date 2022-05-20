@@ -1,0 +1,360 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+    <title>成成0v0</title>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.css">
+    <script type="text/javascript">
+        if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+            alert('朋友，这边建议您使用Chrome浏览器呢~');
+        }
+    </script>
+</head>
+
+<body>
+    <div id="body-wrap">
+        <nav class="not_index_bg" id="nav" style="background-image:url(./assets/images/bg.jpg)">
+            <div id="page_site-info">
+                <div id="site-title">
+                    <span class="blogtitle"></span>
+                    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.min.js"></script>
+                    <script>
+                        var typed = new Typed(".blogtitle", {
+                            strings: ['Are you ok?','お元気ですか?','Ты в порядке?','你还好吗？'],
+                            startDelay: 300,
+                            typeSpeed: 100,
+                            loop: true,
+                            backSpeed: 50,
+                            showCursor: true
+                        });
+                    </script>
+                </div>
+            </div>
+        </nav>
+        <main id="content-outer">
+            <div class="layout_page" id="content-inner">
+                <div class="aside_content" id="aside_content">
+                    <div class="card-widget card-info">
+                        <div class="card-content">
+                            <div class="card-info-avatar is-center">
+                                <img class="avatar-img"
+                                    src="./assets/favicon.ico"
+                                    alt="avatar">
+                                <div class="author-info__name"><font color="orange"><b>成成0v0</b></font></div>
+                                <!-- <div class="author-info__description">Hello World!</div> -->
+                            </div>
+                            <div class="card-info-social-icons is-center">
+                                <a class="social-icon" href="https://github.com/chengcheng0v0" target="_blank">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-widget card-announcement">
+                        <div class="card-content">
+                            <div class="item-headline">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <span>公告</span>
+                            </div>
+                            <div id="">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-widget card-announcement">
+                        <div class="card-content">
+                            <div class="item-headline">
+                                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                                <span>一言</span>
+                            </div>
+                            <div id="hitokoto"></div>
+                        </div>
+                    </div>
+
+                    <div class="card-widget card-announcement">
+                        <div class="card-content">
+                            <div class="item-headline">
+                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                <span>推荐</span>
+                            </div>
+                            <div id="">
+                                <li><a href="http://li23.cn" style="color: orange; text-decoration:none;">首页</a></li>
+                                <li><a href="http://li23.cn" style="color: orange; text-decoration:none;">首页</a></li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-widget card-webinfo">
+                        <div class="card-content">
+                            <div class="item-headline">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                <span>站点信息</span>
+                            </div>
+                            <div class="webinfo">
+                                <div class="webinfo-item">
+                                    <div class="webinfo-site-name">总访问量：</div>
+                                    <div class="webinfo-site-pv-count" id="busuanzi_value_site_pv">未知</div>
+                                </div>
+                                <div class="webinfo-item">
+                                    <div class="webinfo-site-name">运行状态：</div>
+                                    <!-- <div class="webinfo-site-pv-count" id="">🟢 正常</div> -->
+                                    <div class="webinfo-site-pv-count" id="">🟠 卡顿</div>
+                                    <!-- <div class="webinfo-site-pv-count" id="">🔴 严重错误</div> -->
+                                </div>
+                                <div class="webinfo-item">
+                                    <div class="webinfo-site-name">站长状态：</div>
+                                    <div class="webinfo-site-pv-count" id="">🟠 繁忙</div>
+                                </div>
+                                <div class="webinfo-item">
+                                    <div class="webinfo-site-name">-----</div>
+                                    <div class="webinfo-site-pv-count" id="">-----</div>
+                                </div>
+                                <div class="webinfo-item">
+                                    <div class="webinfo-site-name">本站已稳定运行</div>
+                                    <div class="webinfo-site-pv-count" id="busuanzi_value_site_pv">
+                                        <span id=span_time>未知</span>
+                                        <script language=javascript>
+                                            function show_date_time()
+                                            {
+                                                window.setTimeout("show_date_time()", 1000);
+                                                BirthDay=new Date("5/15/2022 20:00:00");
+                                                today=new Date();
+                                                timeold=(today.getTime()-BirthDay.getTime());
+                                                sectimeold=timeold/1000
+                                                secondsold=Math.floor(sectimeold);
+                                                msPerDay=24*60*60*1000
+                                                e_daysold=timeold/msPerDay
+                                                daysold=Math.floor(e_daysold);
+                                                e_hrsold=(e_daysold-daysold)*24;
+                                                hrsold=Math.floor(e_hrsold);
+                                                e_minsold=(e_hrsold-hrsold)*60;
+                                                minsold=Math.floor((e_hrsold-hrsold)*60);
+                                                seconds=Math.floor((e_minsold-minsold)*60);
+                                                span_time.innerHTML='<font style=color:#C40000>'+daysold+'</font> 天 <font style=color:#C40000>'+hrsold+'</font> 时 <font style=color:#C40000>'+minsold+'</font> 分 <font style=color:#C40000>'+seconds+'</font> 秒';
+                                            }
+                                            show_date_time();
+                                        </script>
+                                </div>
+                                </div>
+                                <div class="webinfo-item">
+                                    <div class="webinfo-site-name">当前页面URL</div>
+                                    <div class="webinfo-site-pv-count" style="user-select: text" id="">
+                                        <span id="span_url">[ <a href="javascript:void(0);" onclick="alert('当前URL为：'+'\n'+url)" style="color: orange; text-decoration:none;">查看</a> ] [ <a href="javascript:void(0);" onclick="copy(url)" style="color: orange; text-decoration:none;">复制</a> ]</span>
+                                        <script>
+                                            var url = window.location.href;
+                                            // span_url.innerHTML=url
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <article id="page">
+                    <div class="article-container">
+                        <h2>音乐</h2>
+                        <meting-js auto="https://music.163.com/#/my/m/music/playlist?id=6879282277">
+                        </meting-js>
+                        <hr>
+
+                        <h2>我的技能</h2>
+                        <div class="skillbox">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 85%">
+                                    <span>HTML</span>
+                                </div>
+                                <div class="skill-bar-percent">85%</div>
+                            </div>
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #9900FF 0%, #CC66FF 100%); width: 45%">
+                                    <span>CSS</span>
+                                </div>
+                                <div class="skill-bar-percent">45%</div>
+                            </div>
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #2196F3 0%, #42A5F5 100%); width: 65%">
+                                    <span>PHP</span>
+                                </div>
+                                <div class="skill-bar-percent">65%</div>
+                            </div>
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 15%">
+                                    <span>Java</span>
+                                </div>
+                                <div class="skill-bar-percent">15%</div>
+                            </div>
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #f54009 0%, #f54059 100%); width: 70%">
+                                    <span>C++</span>
+                                </div>
+                                <div class="skill-bar-percent">70%</div>
+                            </div>
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 90%">
+                                    <span>Python</span>
+                                </div>
+                                <div class="skill-bar-percent">90%</div>
+                            </div>
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 50%">
+                                    <span>MySQL</span>
+                                </div>
+                                <div class="skill-bar-percent">50%</div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <h2>开源项目</h2>
+                        <div class="tool">
+                            <!--
+                            <a href="https://leetcode-cn.com/problemset/all/" target="_blank">Leetcode</a><br>
+                            <a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank">剑指 Offer</a>
+                            -->
+                        </div>
+
+                        <hr>
+                        <h2>我的博客</h2>
+                        <div class="tool">
+                            <p>快来康康吧，每周更新！<br>&gt; <a href="http://blog.chengcheng0v0.cc" target="_blank" rel="noopener noreferrer">GO!</a></p>
+                        </div>
+
+                        <hr>
+                        <h2></h2>
+                        <div class="tool">
+                            <p></p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <footer id="footer">
+            <div id="footer-wrap">
+                &copy;成成0v0<br>蜀ICP备2022004998号
+            </div>
+        </footer>
+    </div>
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.js"></script>
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.js" type="module"></script>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/lazysizes/5.3.2/lazysizes.min.js" async></script>
+    <!-- Aplayer meting -->
+    <!-- require APlayer -->
+    <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css">
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script>
+    <!-- require MetingJS -->
+    <script src="http://chengcheng0v0.cc/assets/js/meting.js"></script>
+
+    <!-- nplayer -->
+    <script src="https://unpkg.com/nplayer@latest/dist/index.min.js"></script>
+
+    <!-- 一言 -->
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <!-- 看板娘 -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    -->
+
+    <!--鼠标点击效果-->
+    <!-- <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script> -->
+
+    <!-- 复制内容 -->
+    <script>
+        function copy(data) {
+            let input = document.createElement("input");
+            input.setAttribute("readonly", "readonly");
+            input.value = data;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand("Copy");
+            document.body.removeChild(input);
+            this.$message.success("复制成功");
+        }
+    </script>
+
+    <script type="text/javascript">
+        // 控制台消息
+        console.clear();
+        console.log("%c 乾杯 - ( ゜- ゜)つロ", "background:#24272A; color:#ffffff", "");
+        console.log("");
+
+        (function ($) {
+            $.fn.snow = function (options) {
+                var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#10052;'),
+                    documentHeight = $(document).height(),
+                    documentWidth = $(document).width(),
+                    defaults = {
+                        minSize: 10,
+                        maxSize: 20,
+                        newOn: 1000,
+                        flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+                    },
+                    options = $.extend({}, defaults, options);
+                var interval = setInterval(function () {
+                    var startPositionLeft = Math.random() * documentWidth - 100,
+                        startOpacity = 0.5 + Math.random(),
+                        sizeFlake = options.minSize + Math.random() * options.maxSize,
+                        endPositionTop = documentHeight - 200,
+                        endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+                        durationFall = documentHeight * 10 + Math.random() * 5000;
+                    $flake.clone().appendTo('body').css({
+                        left: startPositionLeft,
+                        opacity: startOpacity,
+                        'font-size': sizeFlake,
+                        color: options.flakeColor
+                    }).animate({
+                        top: endPositionTop,
+                        left: endPositionLeft,
+                        opacity: 0.2
+                    }, durationFall, 'linear', function () {
+                        $(this).remove()
+                    });
+                }, options.newOn);
+            };
+        })(jQuery);
+        $(function () {
+            $.fn.snow({
+                minSize: 5, /* 定义雪花最小尺寸 */
+                maxSize: 50, /* 定义雪花最大尺寸 */
+                newOn: 800, /* 定义密集程度，数字越小越密集 */
+            });
+        });
+
+        // 浏览器萌标题
+        var OriginTitle = document.title;
+        var titleTime;
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) {
+                // $('[rel="icon"]').attr('href', "/funny.ico");
+                document.title = '╭(°A°`)╮ 快回来！';
+                clearTimeout(titleTime);
+            }
+            else {
+                $('[rel="icon"]').attr('href', "/favicon.ico");
+                document.title = '(ฅ>ω<*ฅ) 总算回来啦~';
+                titleTime = setTimeout(function () {
+                    document.title = OriginTitle;
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+
+</html>
