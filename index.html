@@ -45,7 +45,7 @@
                         <div class="card-content">
                             <div class="card-info-avatar is-center">
                                 <img class="avatar-img"
-                                    src="./favicon.ico"
+                                    src="./assets/favicon.ico"
                                     alt="avatar">
                                 <div class="author-info__name"><font color="orange"><b>成成0v0</b></font></div>
                                 <!-- <div class="author-info__description">Hello World!</div> -->
@@ -105,8 +105,8 @@
                                 </div>
                                 <div class="webinfo-item">
                                     <div class="webinfo-site-name">运行状态：</div>
-                                    <!-- <div class="webinfo-site-pv-count" id="">🟢 正常</div> -->
-                                    <div class="webinfo-site-pv-count" id="">🟠 卡顿</div>
+                                    <div class="webinfo-site-pv-count" id="">🟢 正常</div>
+                                    <!-- <div class="webinfo-site-pv-count" id="">🟠 卡顿</div> -->
                                     <!-- <div class="webinfo-site-pv-count" id="">🔴 严重错误</div> -->
                                 </div>
                                 <div class="webinfo-item">
@@ -147,7 +147,7 @@
                                 <div class="webinfo-item">
                                     <div class="webinfo-site-name">当前页面URL</div>
                                     <div class="webinfo-site-pv-count" style="user-select: text" id="">
-                                        <span id="span_url">[ <a href="javascript:void(0);" onclick="alert('当前URL为：'+'\n'+url)" style="color: orange; text-decoration:none;">查看</a> ] [ <a href="javascript:void(0);" onclick="copy(url)" style="color: orange; text-decoration:none;">复制</a> ]</span>
+                                        <span id="span_url">[ <a href="javascript:void(0);" onclick="swal('当前页面URL为：'+'\n\n'+url)" style="color: orange; text-decoration:none;">查看</a> ] [ <a href="javascript:void(0);" onclick="copy(url)" style="color: orange; text-decoration:none;">复制</a> ]</span>
                                         <script>
                                             var url = window.location.href;
                                             // span_url.innerHTML=url
@@ -253,11 +253,12 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.js" type="module"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/lazysizes/5.3.2/lazysizes.min.js" async></script>
-    <!-- Aplayer meting -->
-    <!-- require APlayer -->
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <!-- APlayer -->
     <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css">
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script>
-    <!-- require MetingJS -->
+    <!-- MetingJS -->
     <script src="http://chengcheng0v0.cc/assets/js/meting.js"></script>
 
     <!-- nplayer -->
@@ -331,9 +332,9 @@
         })(jQuery);
         $(function () {
             $.fn.snow({
-                minSize: 5, /* 雪花最小尺寸 */
-                maxSize: 50, /* 雪花最大尺寸 */
-                newOn: 800, /* 密集程度，数字越小越密集 */
+                minSize: 5, /* 定义雪花最小尺寸 */
+                maxSize: 50, /* 定义雪花最大尺寸 */
+                newOn: 800, /* 定义密集程度，数字越小越密集 */
             });
         });
 
