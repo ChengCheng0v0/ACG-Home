@@ -24,6 +24,6 @@
 - [x] 运行时间统计
 - [x] 获取页面URL
 - [x] 禁用框选
-- [x] SweetAlert 弹窗
+- [x] [SweetAlert 弹窗](https://github.com/t4t5/sweetalert)
 
 如果你有一些好的创意和想法，欢迎提出 [Issues](https://github.com/ChengCheng0v0/ACG-Home/issues) ！
