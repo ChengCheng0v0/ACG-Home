@@ -23,6 +23,6 @@
 - [x] 萌标题
 - [x] 运行时间统计
 - [x] 获取页面URL
-- [x] 禁用文字框选
+- [x] 禁用框选
 
 如果你有一些好的创意和想法，欢迎提出 [Issues](https://github.com/ChengCheng0v0/ACG-Home/issues) ！
