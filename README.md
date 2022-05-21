@@ -24,4 +24,4 @@
 - [x] 运行时间统计
 - [x] 获取页面URL
 
-如果你有一些好的创意和想法，请提出 [Issues](https://github.com/ChengCheng0v0/ACG-Home/issues) ！
+如果你有一些好的创意和想法，欢迎提出 [Issues](https://github.com/ChengCheng0v0/ACG-Home/issues) ！
