@@ -1,7 +1,7 @@
 ## ACG Home
 
 一个好看的二次元个人主页！  
-（修改于 @mrxur 的 [home](https://github.com/mrxur/home) ）
+（修改于 @mrxur 的 [home](https://github.com/mrxur/home)）
 
 预览地址：[http://chengcheng0v0.cc](http://chengcheng0v0.cc)
 
