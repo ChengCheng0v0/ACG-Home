@@ -41,7 +41,6 @@ hr {
     margin: 2rem auto;
     width: calc(100% - 4px);
     border: 2px dashed #a4d8fa;
-    background: #fff;
 }
 hr {
     box-sizing: content-box;
@@ -349,4 +348,54 @@ aside_content .card-info .author-info__description {
     background-color: transparent
 }
 
+.dark-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #0000008a;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 3px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
 
+.dark-button:hover {
+    background-color: #000000be;
+    color: #fff;
+}
+
+.dark-mode {
+    background-color: #000000be;
+}
+
+.dark-mode a {
+    color: #00ff6a80
+}
+
+.dark-mode #page {
+    background-color: #252525;
+}
+
+.dark-mode .tool {
+    color: #ffffffbe;
+}
+
+.dark-mode .card-content {
+    background-color: #252525;
+    color: #ffffffbe;
+}
+
+.dark-mode #footer {
+    background-color: #252525;
+}
+
+.dark-mode .skillbar {
+    background-color: #3a3a3a;
+}
+
+.dark-mode .skill-bar-percent {
+    color: #ffffffab;
+}
