@@ -1,11 +1,12 @@
-﻿﻿<!DOCTYPE html>
+﻿﻿﻿<!DOCTYPE html>
 <html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
-    <title>成成0v0</title>
+    <title>成成0v0 の 主页</title>
+    <meta name="description" content="这里是我的个人主页，欢迎来访！">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./assets/css/index.css">
@@ -162,7 +163,7 @@
                 </div>
                 <article id="page">
                     <div class="article-container">
-                        <h2>音乐</h2>
+                        <h2>来点音乐？</h2>
                         <meting-js auto="https://music.163.com/#/my/m/music/playlist?id=6879282277">
                         </meting-js>
                         <hr>
@@ -206,10 +207,10 @@
                             </div>
                             <div class="skillbar">
                                 <div class="skillbar-title"
-                                    style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 90%">
+                                    style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 45%">
                                     <span>Python</span>
                                 </div>
-                                <div class="skill-bar-percent">90%</div>
+                                <div class="skill-bar-percent">45%</div>
                             </div>
                             <div class="skillbar">
                                 <div class="skillbar-title"
@@ -223,7 +224,7 @@
                         <hr>
                         <h2>开源项目</h2>
                         <div class="tool">
-                            <li><a href="？" target="_blank">？</a> | ？</li>
+                            <li><a href="https://github.com/ChengCheng0v0/ACG-Home" target="_blank">ACG-Home</a> | 一个好看的二次元个人主页！</li>
                         </div>
 
                         <hr>
@@ -317,6 +318,27 @@
         }
     </script>
 
+    <!-- 问候 -->
+    <script language="javaScript">
+        now = new Date(),hour = now.getHours();
+        if(hour > 0) if(hour < 6) swal({title: "凌晨了!", text: "注意休息~", icon: "info"});
+        else if(hour > 6) if(hour < 9) swal({title: "早上好!", text: "Good morning", icon: "info"});
+        else if(hour > 21) if(hour < 24)
+            swal({
+                title: "晚上好!",
+                text: "开启夜间模式可以让页面不那么刺眼哟~",
+                icon: "info",
+                buttons: ["夜间模式", true],
+            })
+            .then((OK) => {
+                if (OK) {
+                }
+                else {
+                    dark();
+                }
+            });
+    </script>
+
     <script type="text/javascript">
         // 控制台消息
         console.clear();
@@ -366,8 +388,8 @@
         $(function () {
             $.fn.snow({
                 minSize: 5, /* 定义雪花最小尺寸 */
-                maxSize: 50, /* 定义雪花最大尺寸 */
-                newOn: 800, /* 定义密集程度，数字越小越密集 */
+                maxSize: 50,/* 定义雪花最大尺寸 */
+                newOn: 800  /* 定义密集程度，数字越小越密集 */
             });
         });
 
