@@ -27,5 +27,6 @@
 - [x] [SweetAlert 弹窗](https://github.com/t4t5/sweetalert)
 - [x] 联系方式
 - [x] 夜间模式
+- [x] 定时问候
 
 如果你有一些好的创意和想法，欢迎提出 [Issues](https://github.com/ChengCheng0v0/ACG-Home/issues) ！
