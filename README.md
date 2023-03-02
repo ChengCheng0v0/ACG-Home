@@ -3,7 +3,7 @@
 一个好看的二次元个人主页！  
 （修改于 @mrxur 的 [home](https://github.com/mrxur/home)）
 
-预览地址：[https://chengcheng0v0.cc](https://chengcheng0v0.cc)
+预览地址：[http://cichat.cn](http://cichat.cn)
 
 ## 对比原版
 
