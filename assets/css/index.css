@@ -267,7 +267,7 @@ aside_content .card-info .author-info__description {
 #footer {
     position: relative;
     margin-top: 3rem;
-    font-size : 5px;
+    font-size : 12px;
     background-attachment: local;
     background-position: bottom;
     background-size: cover;
@@ -280,7 +280,7 @@ aside_content .card-info .author-info__description {
 }
 #footer-wrap {
     position: relative;
-    padding: 2rem 1rem;
+    padding: 12px 16px;
     text-align: center;
 }
 
