@@ -1,0 +1,20 @@
+{
+  "name": "acg-home",
+  "version": "1.0.0",
+  "description": "ACG-Home",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "成成0v0 (hic.top, chengcheng@miao.ms)",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "eslint": "^9.11.1"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^9.1.0"
+  }
+}
