@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("");
 
     // 浏览器动态标题
+    /*
     var OriginTitle = document.title;
     var titleTime;
     document.addEventListener("visibilitychange", () => {
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }, 1000);
         }
     });
+    */
 
     // 夜间模式
     function dark() {

@@ -1,22 +1,33 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ACG-Home</title>
         <meta name="description" content="Content Info" />
         <link rel="icon" href="./favicon.ico" />
 
-        <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.css" />
+        <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.js"></script>
 
         <script src="./assets/scripts/utils.js"></script>
         <script src="./assets/scripts/index.js"></script>
 
-        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="stylesheet" href="./assets/styles/index.css" />
     </head>
-
     <body>
-        
+        <div class="page-head">
+            <span class="title"></span>
+            <script>
+                var typed = new Typed(".page-head > .title", {
+                    strings: ["求知若饥，虚心若愚", "Stay Hungry Stay Foolish"],
+                    startDelay: 300,
+                    backDelay: 1000,
+                    typeSpeed: 100,
+                    backSpeed: 50,
+                    showCursor: true,
+                    loop: true,
+                });
+            </script>
+        </div>
     </body>
 </html>
