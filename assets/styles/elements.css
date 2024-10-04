@@ -68,17 +68,17 @@ a {
     transition: background-size 0.8s;
 }
 
-a:hover {
+.right-area a:hover {
     color: #2a92d8;
     background-position: left bottom;
     background-size: 100% 2px;
 }
 
-a[target="_blank"] {
+.right-area a[target="_blank"] {
     padding-right: 12px;
 }
 
-a[target="_blank"]::after {
+.right-area a[target="_blank"]::after {
     content: "\f35d";
     font-family: "Font Awesome 5 Free";
     position: absolute;
