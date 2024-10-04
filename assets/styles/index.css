@@ -1,4 +1,4 @@
-﻿/* - 全局样式 */
+/* - 全局样式 */
 html,
 body {
     margin: 0;
@@ -58,8 +58,8 @@ body {
 /* 内容版块 */
 .primary-container > .right-area > .content-page {
     width: 100%;
-    height: 1500px;
     margin-top: 16px;
+    border-radius: 12px;
     padding: 20px 46px 46px 46px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
@@ -70,6 +70,7 @@ body {
     width: 100%;
     height: 260px;
     margin-top: 16px;
+    border-radius: 12px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
 }
