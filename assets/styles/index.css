@@ -32,3 +32,39 @@ body {
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
 }
 /* - 页首 End */
+
+/* - 主体容器 */
+.primary-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: brown;
+}
+
+/* 左侧区域 */
+.primary-container > .left-area {
+    width: 350px;
+    height: 1500px;
+    margin-top: 16px;
+    margin-right: 16px;
+    background-color: aqua;
+}
+
+/* 右侧区域 */
+.primary-container > .right-area {
+    width: 1050px;
+    height: 1500px;
+    margin-top: 16px;
+    background-color: aqua;
+}
+/* - 主体容器 End */
+
+/* - 页脚 */
+.footer {
+    width: 100%;
+    height: 180px;
+    margin-top: 48px;
+    background-color: coral;
+}
+/* - 页脚 End */
