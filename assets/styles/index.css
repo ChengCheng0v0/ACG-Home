@@ -39,32 +39,45 @@ body {
     justify-content: center;
     width: 100%;
     height: auto;
-    background-color: brown;
+    /* background-color: brown; */
 }
 
 /* 左侧区域 */
 .primary-container > .left-area {
     width: 350px;
-    height: 1500px;
-    margin-top: 16px;
     margin-right: 16px;
-    background-color: aqua;
 }
 
 /* 右侧区域 */
 .primary-container > .right-area {
     width: 1050px;
-    height: 1500px;
-    margin-top: 16px;
-    background-color: aqua;
 }
 /* - 主体容器 End */
+
+/* 内容版块 */
+.primary-container > .right-area > .content-page {
+    width: 100%;
+    height: 1500px;
+    margin-top: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* 左侧卡片 */
+.primary-container > .left-area > .cards > .card-item {
+    width: 100%;
+    height: 260px;
+    margin-top: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
+}
 
 /* - 页脚 */
 .footer {
     width: 100%;
     height: 180px;
-    margin-top: 48px;
-    background-color: coral;
+    margin-top: 70px;
+    background-color: #e5e5e5;
+    box-shadow: inset 0 -4px 8px 6px rgba(0, 0, 0, 0.06);
 }
 /* - 页脚 End */
