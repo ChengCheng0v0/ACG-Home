@@ -1,4 +1,28 @@
 /* - 全局样式 */
+@font-face {
+    font-family: "Linotte";
+    src: url("../fonts/Linotte\ Regular.otf") format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Linotte";
+    src: url("../fonts/Linotte\ Bold.otf") format("opentype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "HYZhengYuan";
+    src: url("../fonts/HYZhengYuan-55W.ttf") format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "HYZhengYuan";
+    src: url("../fonts/HYZhengYuan-85S.ttf") format("opentype");
+    font-weight: bold;
+}
+
 html,
 body {
     margin: 0;
@@ -8,6 +32,8 @@ body {
 body {
     background-color: #eeeeee;
     color: #4c4948;
+    font-family: Linotte, HYZhengYuan, sans-serif;
+    font-weight: normal;
 }
 /* - 全局样式 End */
 

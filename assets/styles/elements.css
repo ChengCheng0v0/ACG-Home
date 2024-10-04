@@ -1,3 +1,28 @@
+/* - 自定义滚动条 */
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #7ac0f0;
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #7ac0f0;
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:active {
+    background: #7ac0f0;
+    border-radius: 6px;
+}
+/* - 自定义滚动条 End */
+
 /* - 分割线 */
 hr {
     position: relative;
@@ -31,3 +56,36 @@ h1, h2, h3, h4, h5, h6 {
     color: #344c67;
 }
 /* - 标题 End */
+
+/* - 超链接 */
+a {
+    position: relative;
+    color: #2a92d8;
+    text-decoration: none;
+
+    background: linear-gradient(to right, #2a92d8, #2a92d8) no-repeat right bottom;
+    background-size: 0 2px;
+    transition: background-size 0.8s;
+}
+
+a:hover {
+    color: #2a92d8;
+    background-position: left bottom;
+    background-size: 100% 2px;
+}
+
+a[target="_blank"] {
+    padding-right: 12px;
+}
+
+a[target="_blank"]::after {
+    content: "\f35d";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    transform: translate(0%, -20%);
+    pointer-events: none;
+}
+/* - 超链接 End */
