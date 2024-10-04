@@ -95,7 +95,7 @@ body {
 .primary-container > .left-area > .cards > .card-item {
     width: 100%;
     margin-top: 16px;
-    padding: 20px;
+    padding: 18px 20px;
     border-radius: 12px;
     box-sizing: border-box;
     background-color: #ffffff;
@@ -148,6 +148,11 @@ body {
     margin-left: 12px;
 }
 /* - 个人信息 End */
+
+/* 一言 */
+.primary-container > .left-area > .cards > .card-item#hitokoto > .content a#hitokoto-text {
+    color: unset;
+}
 /* - 左侧卡片 End */
 
 /* - 页脚 */
