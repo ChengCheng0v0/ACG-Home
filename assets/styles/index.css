@@ -91,15 +91,64 @@ body {
     box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
 }
 
-/* 左侧卡片 */
+/* - 左侧卡片 */
 .primary-container > .left-area > .cards > .card-item {
     width: 100%;
-    height: 260px;
     margin-top: 16px;
+    padding: 20px;
     border-radius: 12px;
+    box-sizing: border-box;
     background-color: #ffffff;
     box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
+    font-size: 14px;
 }
+
+/* 标题 */
+.primary-container > .left-area > .cards > .card-item > .title {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+
+    i {
+        margin-right: 10px;
+    }
+}
+
+/* - 个人信息 */
+.primary-container > .left-area > .cards > .card-item#personal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary-container > .left-area > .cards > .card-item#personal-info > .avatar {
+    width: 120px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.primary-container > .left-area > .cards > .card-item#personal-info > .name {
+    margin: 12px 0 14px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.primary-container > .left-area > .cards > .card-item#personal-info > .social-icons i {
+    padding: 7px;
+    border-radius: 50%;
+    font-size: 16px;
+    background-color: #b5e0ff;
+    color: #304660;
+}
+
+.primary-container > .left-area > .cards > .card-item#personal-info > .social-icons a + a {
+    margin-left: 12px;
+}
+/* - 个人信息 End */
+/* - 左侧卡片 End */
 
 /* - 页脚 */
 .footer {
