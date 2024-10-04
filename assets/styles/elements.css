@@ -1,0 +1,24 @@
+/* - 分割线 */
+hr {
+    position: relative;
+    overflow: visible;
+    width: calc(100% - 4px);
+    height: 0;
+    margin: 32px auto;
+    box-sizing: content-box;
+    border: 2px dashed #a4d8fa;
+}
+
+hr:before {
+    content: "\f0c4";
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: -10px;
+    left: 5%;
+    z-index: 1;
+    color: #49b1f5;
+    transition: all 1s ease-in-out;
+}
+/* - 分割线 End */
