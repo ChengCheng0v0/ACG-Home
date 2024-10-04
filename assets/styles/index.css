@@ -45,9 +45,10 @@ body {
     width: 100%;
     height: 320px;
     background-color: #49b1f5;
-    background-image: url(../images/bg.jpg);
+    background-image: url(../images/backgrounds/page-head/wallhaven-9delkw.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center 85%; /* 请根据需要调整图片位置 */
+    /* background-attachment: fixed; */
 }
 
 .page-head > .title,

@@ -48,25 +48,28 @@ function copy(data) {
 }
 
 // 显示邮箱
-function email() {
+function showEmail() {
     swal({
         title: "E-mail",
-        text: "suxinchengcheng@gmail.com",
+        text: "chengcheng@miao.ms",
         buttons: ["复制", true],
     }).then((OK) => {
         if (OK) {
             /* empty */
         } else {
-            copy("suxinchengcheng@gmail.com");
+            copy("chengcheng@miao.ms");
         }
     });
 }
 
 // 显示 URL
-function page_url() {
+function showPageUrl() {
     const url = window.location.href;
     swal({
         title: "URL",
         text: url,
     });
 }
+
+// 将方法挂载到全局对象 window
+window.showEmail = showEmail;
