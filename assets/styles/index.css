@@ -37,6 +37,22 @@ body {
 }
 /* - 全局样式 End */
 
+/* - 鼠标指针 */
+* {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/normal.cur), auto;
+}
+
+p,
+span {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur), auto;
+}
+
+a {
+    background-color: transparent;
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur), auto;
+}
+/* - 鼠标指针 End */
+
 /* - 页首 */
 .page-head {
     display: flex;
