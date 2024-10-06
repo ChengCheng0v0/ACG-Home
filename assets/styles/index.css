@@ -158,10 +158,30 @@ body {
 
 /* - 页脚 */
 .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 180px;
     margin-top: 70px;
     background-color: #e5e5e5;
     box-shadow: inset 0 -4px 8px 6px rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.footer > br {
+    position: relative;
+}
+
+.footer > .line-break {
+    display: block;
+    margin: 2px 0;
+    color: #aaaaaa;
+}
+
+.footer .icp-link {
+    color: #4c4948;
 }
 /* - 页脚 End */
