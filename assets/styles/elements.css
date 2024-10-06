@@ -1,4 +1,4 @@
-/* - 自定义滚动条 */
+/* - 滚动条 */
 body::-webkit-scrollbar {
     width: 6px;
 }
@@ -21,7 +21,30 @@ body::-webkit-scrollbar-thumb:active {
     background: #7ac0f0;
     border-radius: 6px;
 }
-/* - 自定义滚动条 End */
+/* - 滚动条 End */
+
+/* - 鼠标指针 */
+* {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/normal.cur), auto;
+}
+
+p,
+span {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur), auto;
+}
+
+a {
+    background-color: transparent;
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur), auto;
+}
+/* - 鼠标指针 End */
+
+/* 文本选中 */
+::selection {
+    text-decoration: underline;
+    text-decoration-color: #2a92d8;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 
 /* - 分割线 */
 hr {
@@ -49,7 +72,12 @@ hr:before {
 /* - 分割线 End */
 
 /* - 标题 */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     position: relative;
     margin: 16px 0 12px 0;
     font-weight: 700;
