@@ -1,0 +1,10 @@
+{
+    "id": "defdark.themes.acghome.hic.top",
+    "name": "DefDark",
+    "version": "1.0.0",
+    "author": "成成0v0 (hic.top, chengcheng@miao.ms)",
+    "files": {
+        "styles": ["elements.css", "index.css"],
+        "scripts": {}
+    }
+}
