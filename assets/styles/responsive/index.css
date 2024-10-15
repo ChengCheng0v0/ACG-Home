@@ -18,6 +18,12 @@
         width: 100%;
     }
     /* - 主体容器 End */
+
+    /* - Fixes */
+    img {
+        max-width: 100%;
+    }
+    /* - Fixes End */
 }
 
 @media (min-width: 900px) and (max-width: 1440px) {
