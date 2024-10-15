@@ -1,9 +1,12 @@
-/* global swal, renderMarkdown */
+/* global getWebsiteConfig, swal, renderMarkdown */
 
 document.addEventListener("DOMContentLoaded", async () => {
+    // 获取网站配置
+    const config = getWebsiteConfig();
+    config.init();
+
     // 输出控制台欢迎消息
-    console.log("%c 乾杯 - ( ゜- ゜)つロ", "background:#24272A; color:#ffffff", "");
-    console.log("");
+    console.log("欢迎来到 " + config.content.title + "！你在看什么呢？！");
 
     // 渲染 Markdown 内容
     renderMarkdown();
