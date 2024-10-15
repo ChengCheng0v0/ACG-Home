@@ -30,6 +30,9 @@ body {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #eeeeee;
     color: #4c4948;
     font-family: Linotte, HYZhengYuan, sans-serif;
@@ -65,20 +68,22 @@ body {
 .primary-container {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     height: auto;
     /* background-color: brown; */
 }
 
 /* 左侧区域 */
 .primary-container > .left-area {
-    width: 350px;
+    max-width: 350px;
+    width: 30%;
     margin-right: 16px;
 }
 
 /* 右侧区域 */
 .primary-container > .right-area {
-    width: 1050px;
+    max-width: 1050px;
+    width: 70%;
 }
 /* - 主体容器 End */
 
@@ -90,6 +95,7 @@ body {
     padding: 20px 46px 46px 46px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
 }
 
 /* - 左侧卡片 */
