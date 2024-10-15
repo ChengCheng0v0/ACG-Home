@@ -1,0 +1,27 @@
+@media (max-width: 899px) {
+    /* - 主体容器 */
+    .primary-container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    /* 左侧区域 */
+    .primary-container > .left-area {
+        max-width: unset;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    /* 右侧区域 */
+    .primary-container > .right-area {
+        max-width: unset;
+        width: 100%;
+    }
+    /* - 主体容器 End */
+}
+
+@media (min-width: 900px) and (max-width: 1440px) {
+}
+
+@media (min-width: 1440px) {
+}
