@@ -1,0 +1,193 @@
+/* - 全局样式 */
+@font-face {
+    font-family: "Linotte";
+    src: url("../fonts/Linotte\ Regular.otf") format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Linotte";
+    src: url("../fonts/Linotte\ Bold.otf") format("opentype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "HYZhengYuan";
+    src: url("../fonts/HYZhengYuan-55W.ttf") format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "HYZhengYuan";
+    src: url("../fonts/HYZhengYuan-85S.ttf") format("opentype");
+    font-weight: bold;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeeeee;
+    color: #4c4948;
+    font-family: Linotte, HYZhengYuan, sans-serif;
+    font-weight: normal;
+}
+/* - 全局样式 End */
+
+/* - 页首 */
+.page-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 320px;
+    background-color: #49b1f5;
+    background-image: url(../images/backgrounds/page-head/wallhaven-9delkw.jpg);
+    background-size: cover;
+    background-position: center 85%; /* 请根据需要调整图片位置 */
+    /* background-attachment: fixed; */
+}
+
+.page-head > .title,
+.page-head > .typed-cursor {
+    margin-top: 32px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+}
+/* - 页首 End */
+
+/* - 主体容器 */
+.primary-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    /* background-color: brown; */
+}
+
+/* 左侧区域 */
+.primary-container > .left-area {
+    max-width: 350px;
+    width: 30%;
+    margin-right: 16px;
+}
+
+/* 右侧区域 */
+.primary-container > .right-area {
+    max-width: 1050px;
+    width: 70%;
+}
+/* - 主体容器 End */
+
+/* 内容版块 */
+.primary-container > .right-area > .content-page {
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 12px;
+    padding: 20px 46px 46px 46px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+}
+
+/* - 左侧卡片 */
+.primary-container > .left-area > .cards > .card-item {
+    width: 100%;
+    margin-top: 16px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+}
+
+/* 标题 */
+.primary-container > .left-area > .cards > .card-item > .title {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+
+    i {
+        margin-right: 10px;
+    }
+}
+
+/* - 个人信息 */
+.primary-container > .left-area > .cards > .card-item#personal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary-container > .left-area > .cards > .card-item#personal-info > .avatar {
+    width: 120px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.primary-container > .left-area > .cards > .card-item#personal-info > .name {
+    margin: 12px 0 14px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.primary-container > .left-area > .cards > .card-item#personal-info > .social-icons i {
+    padding: 7px;
+    border-radius: 50%;
+    font-size: 16px;
+    background-color: #b5e0ff;
+    color: #304660;
+}
+
+.primary-container > .left-area > .cards > .card-item#personal-info > .social-icons a + a {
+    margin-left: 12px;
+}
+/* - 个人信息 End */
+
+/* 一言 */
+.primary-container > .left-area > .cards > .card-item#hitokoto > .content a#hitokoto-text {
+    color: unset;
+}
+/* - 左侧卡片 End */
+
+/* - 页脚 */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 180px;
+    margin-top: 70px;
+    background-color: #e5e5e5;
+    box-shadow: inset 0 -4px 8px 6px rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.footer > br {
+    position: relative;
+}
+
+.footer > .line-break {
+    display: block;
+    margin: 2px 0;
+    color: #aaaaaa;
+}
+
+.footer .icp-link {
+    color: #4c4948;
+}
+/* - 页脚 End */

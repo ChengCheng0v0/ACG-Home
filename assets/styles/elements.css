@@ -1,0 +1,119 @@
+/* - 滚动条 */
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #7ac0f0;
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #7ac0f0;
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:active {
+    background: #7ac0f0;
+    border-radius: 6px;
+}
+/* - 滚动条 End */
+
+/* - 鼠标指针 */
+* {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/normal.cur), auto;
+}
+
+p,
+span {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur), auto;
+}
+
+a {
+    background-color: transparent;
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur), auto;
+}
+/* - 鼠标指针 End */
+
+/* 文本选中 */
+::selection {
+    text-decoration: underline;
+    text-decoration-color: #2a92d8;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* - 分割线 */
+hr {
+    position: relative;
+    overflow: visible;
+    width: calc(100% - 4px);
+    height: 0;
+    margin: 32px auto;
+    box-sizing: content-box;
+    border: 2px dashed #a4d8fa;
+}
+
+hr:before {
+    content: "\f0c4";
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: -10px;
+    left: 5%;
+    z-index: 1;
+    color: #49b1f5;
+    transition: all 1s ease-in-out;
+}
+/* - 分割线 End */
+
+/* - 标题 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin: 16px 0 12px 0;
+    font-weight: 700;
+    color: #344c67;
+}
+/* - 标题 End */
+
+/* - 超链接 */
+a {
+    position: relative;
+    color: #2a92d8;
+    text-decoration: none;
+
+    background: linear-gradient(to right, #2a92d8, #2a92d8) no-repeat right bottom;
+    background-size: 0 2px;
+    transition: background-size 0.8s;
+}
+
+.right-area a:hover {
+    color: #2a92d8;
+    background-position: left bottom;
+    background-size: 100% 2px;
+}
+
+.right-area a[target="_blank"] {
+    padding-right: 12px;
+}
+
+.right-area a[target="_blank"]::after {
+    content: "\f35d";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    transform: translate(0%, -20%);
+    pointer-events: none;
+}
+/* - 超链接 End */
