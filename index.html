@@ -3,12 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ACG-Home</title>
+        <title>Loading...</title>
         <meta name="description" content="Content Info" />
         <link rel="icon" href="./favicon.ico" />
 
         <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.css" />
 
+        <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/alpinejs/3.9.0/cdn.min.js" defer></script>
         <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/sweetalert/2.1.2/sweetalert.min.js"></script>
         <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -20,28 +21,17 @@
         <script src="./assets/scripts/utils.js"></script>
         <script src="./assets/scripts/index.js"></script>
     </head>
-    <body>
+    <body x-data="">
         <div class="page-head">
             <span class="title"></span>
-            <script>
-                var typed = new Typed(".page-head > .title", {
-                    strings: ["求知若饥，虚心若愚", "Stay Hungry Stay Foolish"],
-                    startDelay: 300,
-                    backDelay: 1000,
-                    typeSpeed: 100,
-                    backSpeed: 50,
-                    showCursor: true,
-                    loop: true,
-                });
-            </script>
         </div>
 
         <div class="primary-container">
             <div class="left-area">
                 <div class="cards">
                     <div class="card-item" id="personal-info">
-                        <img class="avatar" src="./assets/images/avatar.png" />
-                        <span class="name">成成0v0</span>
+                        <img class="avatar" :src="config.content.masterInfo.avatar" />
+                        <span class="name" x-text="config.content.masterInfo.name">Loading...</span>
                         <div class="social-icons">
                             <a href="https://space.bilibili.com/675279872" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
                             <a href="https://github.com/ChengCheng0v0" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -76,10 +66,12 @@
         </div>
 
         <div class="footer">
-            <span><a class="icp-link" href="https://icp.gov.moe/?keyword=xxxxxxxx" target="_blank">萌ICP备XXXXXXXX号</a> <i class="fa-solid fa-shield"></i> <a class="icp-link" href="https://beian.miit.gov.cn" target="_blank">X-ICP备XXXXXXXXXX号</a></span>
+            <span class="icp-info">Loading...</span>
             <span class="line-break"><i class="fa-solid fa-ellipsis"></i></span>
-            <span>本站由 [Your Name] 和 <a href="https://hic.top" target="_blank">成成0v0</a> 用 <i class="fa-solid fa-heart"></i> 制作</span>
-            <span>Powered by <a href="https://hic.top" target="_blank">ACG-Home</a></span>
+            <!-- 球球你别改这里可以嘛呜呜呜 (＞﹏＜) -->
+            <!-- “[Loading...]”的实际内容可以在 config.json 的 masterInfo.info 项中修改哦~ -->
+            <span>本站由 <span class="webmaster-info"><a :href="config.content.masterInfo.website" target="_blank" x-text="config.content.masterInfo.name">[Loading...]</a> 和 </span><a href="https://hic.top" target="_blank">成成0v0</a> 用 <i class="fa-solid fa-heart"></i> 制作</span>
+            <span>Powered by <a href="https://github.com/ChengCheng0v0/ACG-Home" target="_blank">ACG-Home</a></span>
         </div>
     </body>
 </html>

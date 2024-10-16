@@ -1,0 +1,37 @@
+{
+    "title": "成成0v0 の 个人网站",
+    "masterInfo": {
+        "name": "成成0v0",
+        "avatar": "./assets/images/avatar.png",
+        "website": "https://hic.top",
+        "socialLink": {
+            "link": {
+                "bilibili": "https://space.bilibili.com/675279872",
+                "github": "https://github.com/ChengCheng0v0",
+                "email": "javascript:showEmail()"
+            },
+            "icon": {
+                "bilibili": "fa-brands fa-bilibili",
+                "github": "fa-brands fa-github",
+                "email": "fa-solid fa-envelope"
+            },
+            "enable": ["bilibili", "github", "email"]
+        }
+    },
+    "pageHead": {
+        "typedContent": ["求知若饥，虚心若愚", "Stay Hungry Stay Foolish"]
+    },
+    "icp": {
+        "info": {
+            "code": {
+                "china": "X-ICP备XXXXXXXXXX号",
+                "moegov": "萌ICP备XXXXXXXX号"
+            },
+            "link": {
+                "china": "https://beian.miit.gov.cn",
+                "moegov": "https://icp.gov.moe/?keyword=xxxxxxxx"
+            }
+        },
+        "enable": ["moegov", "china"]
+    }
+}

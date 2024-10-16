@@ -1,6 +1,28 @@
 /* global swal, marked */
 
-//Markdown 渲染器
+// 获取网站配置
+function getWebsiteConfig() {
+    return {
+        content: {},
+        init() {
+            try {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "../../config.json", false); // 使用同步请求
+                xhr.send();
+
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    this.content = JSON.parse(xhr.responseText); // 动态更新 config 对象
+                } else {
+                    throw new Error("无法获取网站配置文件");
+                }
+            } catch (error) {
+                console.error("无法获取网站配置文件: ", error);
+            }
+        },
+    };
+}
+
+// Markdown 渲染器
 function renderMarkdown() {
     // 获取页面中的所有 .markdown-content 元素
     const markdownElements = document.querySelectorAll(".markdown-content");
