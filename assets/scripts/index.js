@@ -1,10 +1,15 @@
-/* global getWebsiteConfig, Typed, swal, renderMarkdown */
+/* global Alpine, getWebsiteConfig, Typed, swal, renderMarkdown */
+
+// 获取网站配置
+const config = getWebsiteConfig();
+config.init();
+
+// 初始化 Alpine
+document.addEventListener("alpine:init", () => {
+    Alpine.data("getWebsiteConfig", config);
+});
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // 获取网站配置
-    const config = getWebsiteConfig();
-    config.init();
-
     // 设置网站标题
     document.title = config.content.title;
 

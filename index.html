@@ -21,7 +21,7 @@
         <script src="./assets/scripts/utils.js"></script>
         <script src="./assets/scripts/index.js"></script>
     </head>
-    <body>
+    <body x-data="">
         <div class="page-head">
             <span class="title"></span>
         </div>
@@ -68,8 +68,8 @@
         <div class="footer">
             <span><a class="icp-link" href="https://icp.gov.moe/?keyword=xxxxxxxx" target="_blank">萌ICP备XXXXXXXX号</a> <i class="fa-solid fa-shield"></i> <a class="icp-link" href="https://beian.miit.gov.cn" target="_blank">X-ICP备XXXXXXXXXX号</a></span>
             <span class="line-break"><i class="fa-solid fa-ellipsis"></i></span>
-            <span>本站由 [Your Name] 和 <a href="https://hic.top" target="_blank">成成0v0</a> 用 <i class="fa-solid fa-heart"></i> 制作</span>
-            <span>Powered by <a href="https://hic.top" target="_blank">ACG-Home</a></span>
+            <span>本站由 <a :href="config.content.masterInfo.website" target="_blank" x-text="config.content.masterInfo.name">[Your Name]</a> 和 <a href="https://hic.top" target="_blank">成成0v0</a> 用 <i class="fa-solid fa-heart"></i> 制作</span>
+            <span>Powered by <a href="https://github.com/ChengCheng0v0/ACG-Home" target="_blank">ACG-Home</a></span>
         </div>
     </body>
 </html>
