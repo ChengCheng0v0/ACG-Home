@@ -43,4 +43,27 @@ document.addEventListener("DOMContentLoaded", async () => {
             hitokoto.innerText = data.hitokoto;
         })
         .catch(console.error);
+
+    /* 生成页脚 ICP 备案信息 */
+
+    // 获取 .icp-info 元素
+    const icpInfoElement = document.querySelector(".icp-info");
+
+    // 创建一个数组，用来存放生成的链接 HTML
+    const links = config.content.icp.enable
+        .map((key) => {
+            const code = config.content.icp.info.code[key]; // 获取对应的 code
+            const link = config.content.icp.info.link[key]; // 获取对应的 link
+            if (code && link) {
+                // 创建 <a> 标签
+                return `<a class="icp-link" href="${link}" target="_blank">${code}</a>`;
+            }
+            return "";
+        })
+        .filter(Boolean); // 过滤掉无效的值
+
+    // 将生成的链接用 fa-shield 图标连接，并插入到 .icp-info 元素中
+    icpInfoElement.innerHTML = links.join(` <i class="fa-solid fa-shield"></i> `);
+
+    /* 生成页脚 ICP 备案信息 End */
 });

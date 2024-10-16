@@ -6,5 +6,18 @@
     },
     "pageHead": {
         "typedContent": ["求知若饥，虚心若愚", "Stay Hungry Stay Foolish"]
+    },
+    "icp": {
+        "info": {
+            "code": {
+                "china": "X-ICP备XXXXXXXXXX号",
+                "moegov": "萌ICP备XXXXXXXX号"
+            },
+            "link": {
+                "china": "https://beian.miit.gov.cn",
+                "moegov": "https://icp.gov.moe/?keyword=xxxxxxxx"
+            }
+        },
+        "enable": ["moegov", "china"]
     }
 }
