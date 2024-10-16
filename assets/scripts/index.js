@@ -66,4 +66,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     icpInfoElement.innerHTML = links.join(` <i class="fa-solid fa-shield"></i> `);
 
     /* 生成页脚 ICP 备案信息 End */
+
+    /* 检测页脚的重复作者名称并修正 */ // (好像没啥用
+
+    // 获取 .webmaster-info 元素
+    const webmasterInfoElement = document.querySelector(".webmaster-info");
+
+    if (config.content.masterInfo.name === "成成0v0") { // 球球你别改这里可以嘛呜呜呜 (＞﹏＜)
+        webmasterInfoElement.innerHTML = "";
+    }
+
+    /* 检测页脚的重复作者名称并修正 End */
 });
