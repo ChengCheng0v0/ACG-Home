@@ -34,6 +34,29 @@ document.addEventListener("DOMContentLoaded", async () => {
         loop: true,
     });
 
+    /* 生成社交链接图标 */
+
+    // 获取 .social-icons 元素
+    const socialIconsElement = document.querySelector(".social-icons");
+
+    // 创建一个数组，用来存放生成的链接 HTML
+    const socialIconLinks = config.content.masterInfo.socialLink.enable
+        .map((key) => {
+            const icon = config.content.masterInfo.socialLink.icon[key]; // 获取对应的 icon
+            const link = config.content.masterInfo.socialLink.link[key]; // 获取对应的 link
+            if (icon && link) {
+                // 创建 <a> 标签
+                return `<a href="${link}" target="_blank"><i class="${icon}"></i></a>`;
+            }
+            return "";
+        })
+        .filter(Boolean); // 过滤掉无效的值
+
+    // 将生成的链接插入到 .social-icons 元素中
+    socialIconsElement.innerHTML = socialIconLinks.join("");
+
+    /* 生成社交链接图标 End */
+
     // 获取 Hitokoto 一言
     fetch("https://v1.hitokoto.cn")
         .then((response) => response.json())
@@ -50,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const icpInfoElement = document.querySelector(".icp-info");
 
     // 创建一个数组，用来存放生成的链接 HTML
-    const links = config.content.icp.enable
+    const icpInfoLinks = config.content.icp.enable
         .map((key) => {
             const code = config.content.icp.info.code[key]; // 获取对应的 code
             const link = config.content.icp.info.link[key]; // 获取对应的 link
@@ -63,7 +86,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         .filter(Boolean); // 过滤掉无效的值
 
     // 将生成的链接用 fa-shield 图标连接，并插入到 .icp-info 元素中
-    icpInfoElement.innerHTML = links.join(` <i class="fa-solid fa-shield"></i> `);
+    icpInfoElement.innerHTML = icpInfoLinks.join(` <i class="fa-solid fa-shield"></i> `);
 
     /* 生成页脚 ICP 备案信息 End */
 
@@ -72,7 +95,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 获取 .webmaster-info 元素
     const webmasterInfoElement = document.querySelector(".webmaster-info");
 
-    if (config.content.masterInfo.name === "成成0v0") { // 球球你别改这里可以嘛呜呜呜 (＞﹏＜)
+    if (config.content.masterInfo.name === "成成0v0") {
+        // 球球你别改这里可以嘛呜呜呜 (＞﹏＜)
         webmasterInfoElement.innerHTML = "";
     }
 

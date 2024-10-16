@@ -30,8 +30,8 @@
             <div class="left-area">
                 <div class="cards">
                     <div class="card-item" id="personal-info">
-                        <img class="avatar" src="./assets/images/avatar.png" />
-                        <span class="name">成成0v0</span>
+                        <img class="avatar" :src="config.content.masterInfo.avatar" />
+                        <span class="name" x-text="config.content.masterInfo.name">Loading...</span>
                         <div class="social-icons">
                             <a href="https://space.bilibili.com/675279872" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
                             <a href="https://github.com/ChengCheng0v0" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -69,6 +69,7 @@
             <span class="icp-info">Loading...</span>
             <span class="line-break"><i class="fa-solid fa-ellipsis"></i></span>
             <!-- 球球你别改这里可以嘛呜呜呜 (＞﹏＜) -->
+            <!-- “[Loading...]”的实际内容可以在 config.json 的 masterInfo.info 项中修改哦~ -->
             <span>本站由 <span class="webmaster-info"><a :href="config.content.masterInfo.website" target="_blank" x-text="config.content.masterInfo.name">[Loading...]</a> 和 </span><a href="https://hic.top" target="_blank">成成0v0</a> 用 <i class="fa-solid fa-heart"></i> 制作</span>
             <span>Powered by <a href="https://github.com/ChengCheng0v0/ACG-Home" target="_blank">ACG-Home</a></span>
         </div>
