@@ -1,36 +1,33 @@
 /* 全局样式 */
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #1c1c1c;
     color: #ffffff;
-    font-family: Linotte, HYZhengYuan, sans-serif;
-    font-weight: normal;
 }
 
 /* 内容版块 */
 .primary-container > .right-area > .content-page {
-    width: 100%;
-    margin-top: 16px;
-    border-radius: 12px;
-    padding: 20px 46px 46px 46px;
     background-color: #282828;
-    box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
-    box-sizing: border-box;
 }
 
 /* - 左侧卡片 */
 .primary-container > .left-area > .cards > .card-item {
-    width: 100%;
-    margin-top: 16px;
-    padding: 18px 20px;
-    border-radius: 12px;
-    box-sizing: border-box;
     background-color: #282828;
-    box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.06);
-    font-size: 14px;
 }
+/* - 浏览设置 */
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item {
+    color: #000000;
+}
+
+/* - 主题设置 */
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes {
+}
+
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item {
+}
+/* - 主题设置 End */
+/* - 浏览设置 End */
+
+/* - 左侧卡片 End */
 
 /* - 页脚 */
 .footer {
