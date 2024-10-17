@@ -15,7 +15,8 @@ body {
 }
 /* - 浏览设置 */
 .primary-container > .left-area > .cards > .card-item > .content > .settings-item {
-    color: #000000;
+    background-color: #206fa0;
+    color: #ffffff;
 }
 
 /* - 主题设置 */
