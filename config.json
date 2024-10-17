@@ -1,37 +1,20 @@
 {
     "title": "成成0v0 の 个人网站",
     "theme": {
-        "list": {
-            ".default": {
-                "displayName": "Light",
-                "path": "",
+        "theme": "",
+        "colors": {
+            "autoSwitch": {
+                "displayName": "Auto",
+                "light": "light",
+                "dark": "dark",
                 "icon": {
                     "icon": "",
                     "color": "",
                     "background": ""
                 }
             },
-            ".defdark": {
-                "displayName": "Dark",
-                "path": "./assets/themes/defdark",
-                "icon": {
-                    "icon": "",
-                    "color": "",
-                    "background": ""
-                }
-            }
-        },
-        "autoSwitch": {
-            "displayName": "Auto",
-            "light": ".default",
-            "dark": ".defdark",
-            "icon": {
-                "icon": "",
-                "color": "",
-                "background": ""
-            }
-        },
-        "enable": [".default", "autoSwitch", ".defdark"]
+            "enable": ["light", "!autoSwitch", "dark"]
+        }
     },
     "masterInfo": {
         "name": "成成0v0",

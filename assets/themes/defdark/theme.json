@@ -6,5 +6,31 @@
     "files": {
         "styles": ["elements.css", "index.css"],
         "scripts": {}
+    },
+    "colors": {
+        "light": {
+            "displayName": "Light",
+            "files": {
+                "styles": [],
+                "scripts": []
+            },
+            "icon": {
+                "icon": "",
+                "color": "",
+                "background": ""
+            }
+        },
+        "dark": {
+            "displayName": "Dark",
+            "files": {
+                "styles": ["elements.css", "index.css"],
+                "scripts": []
+            },
+            "icon": {
+                "icon": "",
+                "color": "",
+                "background": ""
+            }
+        }
     }
 }
