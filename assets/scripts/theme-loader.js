@@ -49,6 +49,7 @@ class ThemeManager {
         }
     }
 
+    // 加载主题
     load() {
         // 创建一个数组，用来存放生成的 Style 外部资源链接 HTML
         var styleLinks;
@@ -127,13 +128,86 @@ class ThemeManager {
         // 拼接 styleLinks 和 scriptLinks
         const resTag = [...styleLinks, ...scriptLinks];
 
-        document.addEventListener("DOMContentLoaded", () => {
-            // 将生成的外部资源链接插入到 theme 元素中
-            document.querySelector("theme").innerHTML = resTag.join("");
-        });
+        // 将生成的外部资源链接插入到 theme 元素中
+        document.querySelector("theme").innerHTML = resTag.join("");
+    }
+
+    // 设置配色方案
+    setColor(colorId) {
+        if (colorId === localStorage.getItem("theme.color")) {
+            console.warn("%c[W]%c " + `当前配色方案已是 ${colorId}，与其白白重载一次，不如我现在就中断更改`, "background-color: #e98b2a;", "");
+        } else {
+            if (metaData.colors.index.includes(colorId)) {
+                try {
+                    localStorage.setItem("theme.color", colorId);
+
+                    // 重新加载主题
+                    themeManager.load();
+
+                    console.log("%c[I]%c " + `配色方案已更改为: ${colorId}`, "background-color: #00896c;", "");
+                } catch (error) {
+                    console.error("%c[E]%c " + `无法将配色方案更改为 ${colorId}: ${error}`, "background-color: #cb1b45;", "");
+                    throw new Error("配色方案更改失败: ", error);
+                }
+            } else {
+                console.error("%c[E]%c " + `无法将配色方案更改为 ${colorId}，因为未在主题配色方案索引中匹配到传入的值`, "background-color: #cb1b45;", "");
+                throw new Error("配色方案更改失败，未在主题配色方案索引中匹配到传入的值");
+            }
+        }
     }
 }
 
 // 创建 ThemeManager 实例
 const themeManager = new ThemeManager();
-themeManager.load();
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 加载主题
+    themeManager.load();
+
+    /* 根据可用配色方案生成设置按钮 */
+
+    // 获取 .themes 元素
+    const themesElement = document.querySelector(".primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes");
+
+    // 创建一个数组，用来存放生成的按钮 HTML
+    const themeButtons = config.content.theme.colors.enable
+        .map((key) => {
+            let displayName;
+            let icon;
+            let color;
+            let background;
+
+            if (key === "!autoSwitch") {
+                console.log("%c[I]%c " + `Enabled !autoSwitch`, "background-color: #00896c;", "");
+
+                displayName = config.content.theme.colors.autoSwitch.displayName; // 获取对应的 displayName
+                icon = config.content.theme.colors.autoSwitch.icon.icon; // 获取对应的 icon
+                color = config.content.theme.colors.autoSwitch.icon.color; // 获取对应的 color
+                background = config.content.theme.colors.autoSwitch.icon.background; // 获取对应的 background
+            } else {
+                displayName = metaData.colors.list[key].displayName; // 获取对应的 displayName
+                icon = metaData.colors.list[key].icon.icon; // 获取对应的 icon
+                color = metaData.colors.list[key].icon.color; // 获取对应的 color
+                background = metaData.colors.list[key].icon.background; // 获取对应的 background
+            }
+
+            if (displayName && icon && color && background) {
+                // 创建 <div> 标签
+                return `
+                <div class="theme-item" style="color: ${color}; background: ${background};" @click="themeManager.setColor(\`${key}\`);">
+                    <i class="${icon}"></i>
+                    <span>${displayName}</span>
+                </div>
+            `;
+            } else {
+                console.error("%c[E]%c " + `配色方案 ${key} 的设置按钮生成失败，主题元数据的配色方案信息 (${displayName}, ${icon}, ${color}, ${background}) 不满足条件，元数据可能存在问题`, "background-color: #cb1b45;", "");
+            }
+            return "";
+        })
+        .filter(Boolean); // 过滤掉无效的值
+
+    // 将生成的按钮插入到 .social-icons 元素中
+    themesElement.innerHTML = themeButtons.join("");
+
+    /* 根据可用配色方案生成设置按钮 End */
+});

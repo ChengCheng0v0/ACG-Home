@@ -8,9 +8,9 @@
                 "light": "light",
                 "dark": "dark",
                 "icon": {
-                    "icon": "",
-                    "color": "",
-                    "background": ""
+                    "icon": "fa-solid fa-circle-half-stroke",
+                    "color": "#808080",
+                    "background": "linear-gradient(45deg, #eeeeee 50%, #1c1c1c 50%)"
                 }
             },
             "enable": ["light", "!autoSwitch", "dark"]

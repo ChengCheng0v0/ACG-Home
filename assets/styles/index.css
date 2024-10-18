@@ -199,10 +199,19 @@ body {
     border-radius: 12px;
     font-size: 10px;
     font-weight: bold;
+    box-sizing: border-box;
 
     i {
         margin-bottom: 2px;
     }
+}
+
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item, .primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item * {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur), pointer;
+}
+
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item.enable {
+    border: 2px solid #e87a90;
 }
 /* - 主题设置 End */
 /* - 浏览设置 End */
