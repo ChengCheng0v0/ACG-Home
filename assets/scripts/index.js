@@ -1,8 +1,4 @@
-/* global Alpine, getWebsiteConfig, Typed, swal, renderMarkdown */
-
-// 获取网站配置
-const config = getWebsiteConfig();
-config.init();
+/* global config, Alpine, getWebsiteConfig, Typed, swal, renderMarkdown */
 
 // 初始化 Alpine
 document.addEventListener("alpine:init", () => {

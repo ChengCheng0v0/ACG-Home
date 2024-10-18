@@ -3,34 +3,38 @@
     "name": "DefDark",
     "version": "1.0.0",
     "author": "成成0v0 (hic.top, chengcheng@miao.ms)",
+    "repo": "https://github.com/ChengCheng0v0/ACG-Home",
     "files": {
-        "styles": ["elements.css", "index.css"],
-        "scripts": {}
+        "styles": [],
+        "scripts": []
     },
     "colors": {
-        "light": {
-            "displayName": "Light",
-            "files": {
-                "styles": [],
-                "scripts": []
+        "list": {
+            "light": {
+                "displayName": "Light",
+                "files": {
+                    "styles": [],
+                    "scripts": []
+                },
+                "icon": {
+                    "icon": "",
+                    "color": "",
+                    "background": ""
+                }
             },
-            "icon": {
-                "icon": "",
-                "color": "",
-                "background": ""
+            "dark": {
+                "displayName": "Dark",
+                "files": {
+                    "styles": ["elements.css", "index.css"],
+                    "scripts": []
+                },
+                "icon": {
+                    "icon": "",
+                    "color": "",
+                    "background": ""
+                }
             }
         },
-        "dark": {
-            "displayName": "Dark",
-            "files": {
-                "styles": ["elements.css", "index.css"],
-                "scripts": []
-            },
-            "icon": {
-                "icon": "",
-                "color": "",
-                "background": ""
-            }
-        }
+        "index": ["light", "dark"]
     }
 }

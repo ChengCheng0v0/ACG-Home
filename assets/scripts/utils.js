@@ -22,6 +22,10 @@ function getWebsiteConfig() {
     };
 }
 
+// 获取网站配置
+const config = getWebsiteConfig();
+config.init();
+
 // Markdown 渲染器
 function renderMarkdown() {
     // 获取页面中的所有 .markdown-content 元素
