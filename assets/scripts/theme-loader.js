@@ -161,8 +161,12 @@ class ThemeManager {
 const themeManager = new ThemeManager();
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 加载主题
-    themeManager.load();
+    // 如果第一次访问，将配色方案设置为默认值
+    if (localStorage.getItem("theme.color") === null) {
+        themeManager.setColor(config.content.theme.colors.default);
+    } else { // 否则正常加载主题
+        themeManager.load();
+    }
 
     /* 根据可用配色方案生成设置按钮 */
 
