@@ -134,10 +134,20 @@ class ThemeManager {
 
     // 设置配色方案
     setColor(colorId) {
-        if (colorId === localStorage.getItem("theme.color")) {
+        if (colorId === localStorage.getItem("theme.color") || (colorId === "!autoSwitch" && localStorage.getItem("theme.color") === (config.content.theme.colors.autoSwitch.dark || config.content.theme.colors.autoSwitch.light))) {
             console.warn("%c[W]%c " + `当前配色方案已是 ${colorId}，与其白白重载一次，不如我现在就中断更改`, "background-color: #e98b2a;", "");
         } else {
-            if (metaData.colors.index.includes(colorId)) {
+            // 保留关键字“!autoSwitch”，用于自动切换配色方案
+            if (colorId === "!autoSwitch") {
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    localStorage.setItem("theme.color", config.content.theme.colors.autoSwitch.dark);
+                    themeManager.load(); // 重新加载主题
+                } else {
+                    localStorage.setItem("theme.color", config.content.theme.colors.autoSwitch.light);
+                    themeManager.load(); // 重新加载主题
+                }
+            // 检查传入参数的值是否在主题配色方案索引中存在
+            } else if (metaData.colors.index.includes(colorId)) {
                 try {
                     localStorage.setItem("theme.color", colorId);
 
@@ -164,7 +174,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 如果第一次访问，将配色方案设置为默认值
     if (localStorage.getItem("theme.color") === null) {
         themeManager.setColor(config.content.theme.colors.default);
-    } else { // 否则正常加载主题
+    } else {
+        // 否则正常加载主题
         themeManager.load();
     }
 

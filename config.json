@@ -14,7 +14,7 @@
                 }
             },
             "enable": ["light", "!autoSwitch", "dark"],
-            "default": "light"
+            "default": "!autoSwitch"
         }
     },
     "masterInfo": {
