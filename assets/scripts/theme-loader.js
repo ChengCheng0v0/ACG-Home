@@ -181,8 +181,21 @@ class ThemeManager {
                 console.error("%c[E]%c " + `无法将配色方案更改为 ${colorId}，因为未在主题配色方案索引中匹配到传入的值`, "background-color: #cb1b45;", "");
                 throw new Error("配色方案更改失败，未在主题配色方案索引中匹配到传入的值");
             }
+
+            loadThemeSelEff();
         }
     }
+}
+
+// 加载配色方案设置的选中效果
+function loadThemeSelEff() {
+    // 如果存在已加载的选中效果则清除它
+    if (document.querySelector(".theme-item.enable")) {
+        document.querySelector(".theme-item.enable").setAttribute("class", "theme-item");
+    }
+
+    // 插入新的选中效果类
+    document.getElementById(`theme-item-${localStorage.getItem("theme.color")}`).setAttribute("class", "theme-item enable");
 }
 
 // 创建 ThemeManager 实例
@@ -227,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (displayName && icon && color && background) {
                 // 创建 <div> 标签
                 return `
-                <div class="theme-item" style="color: ${color}; background: ${background};" @click="themeManager.setColor(\`${key}\`);">
+                <div class="theme-item" id="theme-item-${key}" style="color: ${color}; background: ${background};" @click="themeManager.setColor(\`${key}\`);">
                     <i class="${icon}"></i>
                     <span>${displayName}</span>
                 </div>

@@ -211,7 +211,8 @@ body {
 }
 
 .primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item.enable {
-    border: 2px solid #e87a90;
+    /* border: 2px solid #e87a90; */
+    box-shadow: 0px 0px 2px 2px #2a92d8;
 }
 /* - 主题设置 End */
 /* - 浏览设置 End */
