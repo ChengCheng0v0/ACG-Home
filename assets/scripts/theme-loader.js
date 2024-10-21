@@ -69,9 +69,22 @@ class ThemeManager {
         // 解析配色方案样式 URL 并插入数组
         metaData.colors.index
             .map((key) => {
+                let targetColor = localStorage.getItem("theme.color"); // 存储目标配色方案的变量
+
+                // 如果目标配色方案为保留关键字“!autoSwitch”（自动切换配色方案），将其改为实际需要加载的配色方案
+                if (targetColor === "!autoSwitch") {
+                    console.log("%c[I]%c " + `当前配色方案为 !autoSwitch 自动切换，用户的浏览器深色模式启用状态为: ${window.matchMedia("(prefers-color-scheme: dark)").matches}`, "background-color: #00896c;", "");
+                    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                        targetColor = config.content.theme.colors.autoSwitch.dark;
+                    } else {
+                        targetColor = config.content.theme.colors.autoSwitch.light;
+                    }
+                }
+
                 const styles = metaData.colors.list[key].files.styles; // 获取对应的 styles
-                if (styles && localStorage.getItem("theme.color") === key) {
-                    // 根据用户设置选择是否生成标签
+
+                // 根据目标配色方案决定是否生成标签
+                if (styles && targetColor === key) {
                     // 如果 styles 是数组，生成多个 link 标签
                     return styles.map((file) => `<link rel="stylesheet" href="${themePath}/colors/${key}/styles/${file}" />`).join(""); // 将生成的所有 link 标签拼接成字符串
                 } else if (localStorage.getItem("theme.color") !== key) {
@@ -106,9 +119,22 @@ class ThemeManager {
         // 解析配色方案脚本 URL 并插入数组
         metaData.colors.index
             .map((key) => {
+                let targetColor = localStorage.getItem("theme.color"); // 存储目标配色方案的变量
+
+                // 如果目标配色方案为保留关键字“!autoSwitch”（自动切换配色方案），将其改为实际需要加载的配色方案
+                if (targetColor === "!autoSwitch") {
+                    console.log("%c[I]%c " + `当前配色方案为 !autoSwitch 自动切换，用户的浏览器深色模式启用状态为: ${window.matchMedia("(prefers-color-scheme: dark)").matches}`, "background-color: #00896c;", "");
+                    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                        targetColor = config.content.theme.colors.autoSwitch.dark;
+                    } else {
+                        targetColor = config.content.theme.colors.autoSwitch.light;
+                    }
+                }
+
                 const scripts = metaData.colors.list[key].files.scripts; // 获取对应的 scripts
-                if (scripts && localStorage.getItem("theme.color") === key) {
-                    // 根据用户设置选择是否生成标签
+
+                // 根据目标配色方案决定是否生成标签
+                if (scripts && targetColor === key) {
                     // 如果 scripts 是数组，生成多个 script 标签
                     return scripts.map((file) => `<script src="${themePath}/colors/${key}/scripts/${file}"></script>`).join(""); // 将生成的所有 link 标签拼接成字符串
                 } else if (localStorage.getItem("theme.color") !== key) {
@@ -134,20 +160,12 @@ class ThemeManager {
 
     // 设置配色方案
     setColor(colorId) {
-        if (colorId === localStorage.getItem("theme.color") || (colorId === "!autoSwitch" && localStorage.getItem("theme.color") === (config.content.theme.colors.autoSwitch.dark || config.content.theme.colors.autoSwitch.light))) {
+        if (colorId === localStorage.getItem("theme.color")) {
             console.warn("%c[W]%c " + `当前配色方案已是 ${colorId}，与其白白重载一次，不如我现在就中断更改`, "background-color: #e98b2a;", "");
         } else {
-            // 保留关键字“!autoSwitch”，用于自动切换配色方案
-            if (colorId === "!autoSwitch") {
-                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                    localStorage.setItem("theme.color", config.content.theme.colors.autoSwitch.dark);
-                    themeManager.load(); // 重新加载主题
-                } else {
-                    localStorage.setItem("theme.color", config.content.theme.colors.autoSwitch.light);
-                    themeManager.load(); // 重新加载主题
-                }
-            // 检查传入参数的值是否在主题配色方案索引中存在
-            } else if (metaData.colors.index.includes(colorId)) {
+            // 检查索引中是否存在主题
+            // 保留关键字 !autoSwitch 可以不需要在索引中存在
+            if (metaData.colors.index.includes(colorId) || colorId === "!autoSwitch") {
                 try {
                     localStorage.setItem("theme.color", colorId);
 
@@ -193,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let background;
 
             if (key === "!autoSwitch") {
-                console.log("%c[I]%c " + `Enabled !autoSwitch`, "background-color: #00896c;", "");
+                console.log("%c[I]%c " + `Website config enabled !autoSwitch`, "background-color: #00896c;", "");
 
                 displayName = config.content.theme.colors.autoSwitch.displayName; // 获取对应的 displayName
                 icon = config.content.theme.colors.autoSwitch.icon.icon; // 获取对应的 icon
