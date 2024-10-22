@@ -182,6 +182,7 @@ class ThemeManager {
                 throw new Error("配色方案更改失败，未在主题配色方案索引中匹配到传入的值");
             }
 
+            // 加载配色方案设置的选中效果
             loadThemeSelEff();
         }
     }
@@ -254,6 +255,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 将生成的按钮插入到 .social-icons 元素中
     themesElement.innerHTML = themeButtons.join("");
+
+    // 加载配色方案设置的选中效果
+    loadThemeSelEff();
 
     /* 根据可用配色方案生成设置按钮 End */
 });
