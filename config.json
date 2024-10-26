@@ -1,5 +1,22 @@
 {
     "title": "成成0v0 の 个人网站",
+    "theme": {
+        "theme": "defdark",
+        "colors": {
+            "autoSwitch": {
+                "displayName": "Auto",
+                "light": "light",
+                "dark": "dark",
+                "icon": {
+                    "icon": "fa-solid fa-circle-half-stroke",
+                    "color": "#808080",
+                    "background": "linear-gradient(45deg, #eeeeee 50%, #1c1c1c 50%)"
+                }
+            },
+            "enable": ["light", "!autoSwitch", "dark"],
+            "default": "!autoSwitch"
+        }
+    },
     "masterInfo": {
         "name": "成成0v0",
         "avatar": "./assets/images/avatar.png",
