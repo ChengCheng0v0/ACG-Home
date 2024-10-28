@@ -1,0 +1,45 @@
+/* 全局样式 */
+body {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+/* 内容版块 */
+.primary-container > .right-area > .content-page {
+    background-color: #282828;
+}
+
+/* - 左侧卡片 */
+.primary-container > .left-area > .cards > .card-item {
+    background-color: #282828;
+}
+/* - 浏览设置 */
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item {
+    background-color: #206fa0;
+    color: #ffffff;
+}
+
+/* - 主题设置 */
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes {
+}
+
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item {
+}
+/* - 主题设置 End */
+/* - 浏览设置 End */
+
+/* - 左侧卡片 End */
+
+/* - 页脚 */
+.footer {
+    background-color: #171717;
+}
+
+.footer > .line-break {
+    color: #aaaaaa;
+}
+
+.footer .icp-link {
+    color: #ffffff;
+}
+/* - 页脚 End */

@@ -1,10 +1,40 @@
 {
-    "id": "defdark.themes.acghome.hic.top",
+    "id": "defdark",
     "name": "DefDark",
     "version": "1.0.0",
     "author": "成成0v0 (hic.top, chengcheng@miao.ms)",
+    "repo": "https://github.com/ChengCheng0v0/ACG-Home",
     "files": {
-        "styles": ["elements.css", "index.css"],
-        "scripts": {}
+        "styles": [],
+        "scripts": []
+    },
+    "colors": {
+        "list": {
+            "light": {
+                "displayName": "Light",
+                "files": {
+                    "styles": [],
+                    "scripts": []
+                },
+                "icon": {
+                    "icon": "fa-solid fa-sun",
+                    "color": "#000000",
+                    "background": "#eeeeee"
+                }
+            },
+            "dark": {
+                "displayName": "Dark",
+                "files": {
+                    "styles": ["elements.css", "index.css"],
+                    "scripts": []
+                },
+                "icon": {
+                    "icon": "fa-solid fa-moon",
+                    "color": "#ffffff",
+                    "background": "#1c1c1c"
+                }
+            }
+        },
+        "index": ["light", "dark"]
     }
 }

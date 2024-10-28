@@ -19,7 +19,10 @@
         <link rel="stylesheet" href="./assets/styles/responsive/index.css" />
 
         <script src="./assets/scripts/utils.js"></script>
+        <script src="./assets/scripts/theme-loader.js"></script>
         <script src="./assets/scripts/index.js"></script>
+
+        <theme></theme>
     </head>
     <body x-data="">
         <div class="page-head">
@@ -32,11 +35,7 @@
                     <div class="card-item" id="personal-info">
                         <img class="avatar" :src="config.content.masterInfo.avatar" />
                         <span class="name" x-text="config.content.masterInfo.name">Loading...</span>
-                        <div class="social-icons">
-                            <a href="https://space.bilibili.com/675279872" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
-                            <a href="https://github.com/ChengCheng0v0" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="javascript:showEmail()" target="_self"><i class="fa-solid fa-envelope"></i></a>
-                        </div>
+                        <div class="social-icons">Loading...</div>
                     </div>
                     <div class="card-item" id="recommend">
                         <span class="title"><i class="fa-solid fa-bullhorn"></i>公告</span>
@@ -50,10 +49,13 @@
                             <a id="hitokoto-text" href="" target="_blank">Loading...</a>
                         </div>
                     </div>
-                    <div class="card-item" id="website-info">
-                        <span class="title"><i class="fa-solid fa-circle-info"></i>站点信息</span>
+                    <div class="card-item" id="settings">
+                        <span class="title"><i class="fa-solid fa-sliders"></i>浏览设置</span>
                         <div class="content">
-                            <span>这是一条测试文本！</span>
+                            <div class="settings-item theme-settings">
+                                <span class="title"><i class="fa-solid fa-shirt"></i>配色方案 · <span x-text="config.content.theme.displayName"></span></span>
+                                <div class="themes"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -44,7 +44,7 @@ body {
 .page-head {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */ /* [^1] 开这玩意儿实现打字标题居中会导致页面跳动，我也不知道这是为甚么 TAT */
     width: 100%;
     height: 320px;
     background-color: #49b1f5;
@@ -56,7 +56,7 @@ body {
 
 .page-head > .title,
 .page-head > .typed-cursor {
-    margin-top: 32px;
+    margin-top: 160px; /* [^1] 所以此处使用上边距实现居中，反正能跑就行（ */
     font-size: 32px;
     font-weight: bold;
     color: #ffffff;
@@ -160,6 +160,64 @@ body {
 .primary-container > .left-area > .cards > .card-item#hitokoto > .content a#hitokoto-text {
     color: unset;
 }
+
+/* - 浏览设置 */
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item {
+    margin-top: 8px;
+    padding: 6px 10px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: #c0e5ff;
+}
+
+/* 标题 */
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .title {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+
+    i {
+        margin-right: 10px;
+    }
+}
+
+/* - 主题设置 */
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    box-sizing: border-box;
+
+    i {
+        margin-bottom: 2px;
+    }
+}
+
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item,
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item * {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur), pointer;
+}
+
+.primary-container > .left-area > .cards > .card-item > .content > .settings-item > .themes > .theme-item.enable {
+    /* border: 2px solid #e87a90; */
+    box-shadow: 0px 0px 2px 2px #2a92d8;
+}
+/* - 主题设置 End */
+/* - 浏览设置 End */
+
 /* - 左侧卡片 End */
 
 /* - 页脚 */
