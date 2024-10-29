@@ -4,7 +4,7 @@ var themePath;
 var metaData;
 
 // 配色方案切换加载动画的最短显示时间
-const minimumColorSwitchTime = 600;
+const minimumColorSwitchTime = 650;
 const colorSwitchSleepTime = 310;
 
 class ThemeManager {
@@ -172,7 +172,7 @@ class ThemeManager {
             document.body.style.overflow = "hidden";
 
             // 开始播放加载动画
-            document.getElementById("loader-iframe").className = "start"; // 播放开始动画
+            document.getElementById("theme-color-loader-iframe").className = "start"; // 播放开始动画
 
             // 加载配色方案
             setTimeout(() => {
@@ -202,7 +202,7 @@ class ThemeManager {
             // 结束播放加载动画
             (() => {
                 setTimeout(() => {
-                    document.getElementById("loader-iframe").className = "end"; // 播放结束动画
+                    document.getElementById("theme-color-loader-iframe").className = "end"; // 播放结束动画
                     document.body.style.paddingRight = "unset"; // 恢复 body 的右边距
                     document.body.style.overflow = "unset"; // 恢复显示滚动条
                 }, minimumColorSwitchTime);
