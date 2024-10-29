@@ -97,7 +97,7 @@
                 const delay = Math.max(0, minimumLoadingTime - elapsedTime);
                 setTimeout(() => {
                     // document.querySelector(".content").style.display = "block"; //显示网站内容
-                    document.getElementById("loader-iframe").classList.add("end"); // 播放结束动画
+                    document.getElementById("loader-iframe").className = "end"; // 播放结束动画
                     document.body.style.overflow = "unset"; // 恢复显示滚动条
                 }, delay);
             });

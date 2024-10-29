@@ -3,6 +3,10 @@
 var themePath;
 var metaData;
 
+// 配色方案切换加载动画的最短显示时间
+const minimumColorSwitchTime = 600;
+const colorSwitchSleepTime = 310;
+
 class ThemeManager {
     constructor() {
         this.parse();
@@ -163,27 +167,44 @@ class ThemeManager {
         if (colorId === localStorage.getItem("theme.color")) {
             console.warn("%c[W]%c " + `当前配色方案已是 ${colorId}，与其白白重载一次，不如我现在就中断更改`, "background-color: #e98b2a;", "");
         } else {
-            // 检查索引中是否存在主题
-            // 保留关键字 !autoSwitch 可以不需要在索引中存在
-            if (metaData.colors.index.includes(colorId) || colorId === "!autoSwitch") {
-                try {
-                    localStorage.setItem("theme.color", colorId);
+            // 隐藏滚动条
+            document.body.style.overflow = "hidden";
 
-                    // 重新加载主题
-                    themeManager.load();
+            // 开始播放加载动画
+            document.getElementById("loader-iframe").className = "start"; // 播放开始动画
 
-                    console.log("%c[I]%c " + `配色方案已更改为: ${colorId}`, "background-color: #00896c;", "");
-                } catch (error) {
-                    console.error("%c[E]%c " + `无法将配色方案更改为 ${colorId}: ${error}`, "background-color: #cb1b45;", "");
-                    throw new Error("配色方案更改失败: ", error);
+            // 加载配色方案
+            setTimeout(() => {
+                // 检查索引中是否存在配色方案
+                // 保留关键字 !autoSwitch 可以不需要在索引中存在
+                if (metaData.colors.index.includes(colorId) || colorId === "!autoSwitch") {
+                    try {
+                        localStorage.setItem("theme.color", colorId);
+
+                        // 重新加载主题
+                        themeManager.load();
+
+                        console.log("%c[I]%c " + `配色方案已更改为: ${colorId}`, "background-color: #00896c;", "");
+                    } catch (error) {
+                        console.error("%c[E]%c " + `无法将配色方案更改为 ${colorId}: ${error}`, "background-color: #cb1b45;", "");
+                        throw new Error("配色方案更改失败: ", error);
+                    }
+                } else {
+                    console.error("%c[E]%c " + `无法将配色方案更改为 ${colorId}，因为未在主题配色方案索引中匹配到传入的值`, "background-color: #cb1b45;", "");
+                    throw new Error("配色方案更改失败，未在主题配色方案索引中匹配到传入的值");
                 }
-            } else {
-                console.error("%c[E]%c " + `无法将配色方案更改为 ${colorId}，因为未在主题配色方案索引中匹配到传入的值`, "background-color: #cb1b45;", "");
-                throw new Error("配色方案更改失败，未在主题配色方案索引中匹配到传入的值");
-            }
 
-            // 加载配色方案设置的选中效果
-            loadThemeSelEff();
+                // 加载配色方案设置的选中效果
+                loadThemeSelEff();
+            }, colorSwitchSleepTime);
+
+            // 结束播放加载动画
+            (() => {
+                setTimeout(() => {
+                    document.getElementById("loader-iframe").className = "end"; // 播放结束动画
+                    document.body.style.overflow = "unset"; // 恢复显示滚动条
+                }, minimumColorSwitchTime);
+            })();
         }
     }
 }

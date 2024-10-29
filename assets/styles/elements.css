@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     border: none;
-    z-index: 9999;
+    z-index: 10000;
     background-color: #cdb09c; /* 设置成与加载动画背景相同的颜色以一定程度防止短暂闪现 */
 }
 
@@ -14,11 +14,24 @@
     transition: transform 0.5s ease;
 }
 
-#loader-iframe.end {
-    animation: end 0.5s ease forwards;
+#loader-iframe.start {
+    animation: loaderStart 0.3s ease forwards;
 }
 
-@keyframes end {
+#loader-iframe.end {
+    animation: loaderEnd 0.5s ease forwards;
+}
+
+@keyframes loaderStart {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes loaderEnd {
     from {
         transform: translateY(0);
     }
