@@ -168,6 +168,7 @@ class ThemeManager {
             console.warn("%c[W]%c " + `当前配色方案已是 ${colorId}，与其白白重载一次，不如我现在就中断更改`, "background-color: #e98b2a;", "");
         } else {
             // 隐藏滚动条
+            document.body.style.paddingRight = `${window.innerWidth - document.documentElement.clientWidth}px`; // 给 body 加一个与滚动条宽度相同的右边距以防止页面抖动
             document.body.style.overflow = "hidden";
 
             // 开始播放加载动画
@@ -202,6 +203,7 @@ class ThemeManager {
             (() => {
                 setTimeout(() => {
                     document.getElementById("loader-iframe").className = "end"; // 播放结束动画
+                    document.body.style.paddingRight = "unset"; // 恢复 body 的右边距
                     document.body.style.overflow = "unset"; // 恢复显示滚动条
                 }, minimumColorSwitchTime);
             })();
