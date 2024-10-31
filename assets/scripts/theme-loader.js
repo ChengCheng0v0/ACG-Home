@@ -160,6 +160,11 @@ class ThemeManager {
 
         // 将生成的外部资源链接插入到 theme 元素中
         document.querySelector("theme").innerHTML = resTag.join("");
+
+        console.log("%c[I]%c " + `准备执行 <theme> 中的所有 Script 脚本`, "background-color: #00896c;", "");
+
+        // 执行 <theme> 中的所有 Script 脚本
+        this.runScripts();
     }
 
     // 设置配色方案
@@ -208,6 +213,25 @@ class ThemeManager {
                 }, minimumColorSwitchTime);
             })();
         }
+    }
+
+    runScripts() {
+        // 遍历 <theme> 中的所有 <script> 标签
+        document.querySelectorAll("theme > script").forEach((script) => {
+            // 获取当前 script 标签的 src
+            const src = script.src;
+
+            // 如果 src 存在（确保它是一个外部链接）
+            if (src) {
+                // 移除原有的 script 标签
+                script.remove();
+
+                // 创建一个新的 script 标签并重新插入
+                const newScript = document.createElement("script");
+                newScript.src = src;
+                document.head.appendChild(newScript);
+            }
+        });
     }
 }
 
