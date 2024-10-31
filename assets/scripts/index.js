@@ -6,6 +6,13 @@ document.addEventListener("alpine:init", () => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
+    // 获取 DOM 元素
+    var element = {
+        socialIcons: document.querySelector(".social-icons"),
+        icpInfo: document.querySelector(".icp-info"),
+        webmasterInfo: document.querySelector(".webmaster-info"),
+    };
+
     // 设置网站标题
     document.title = config.content.title;
 
@@ -32,9 +39,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     /* 生成社交链接图标 */
 
-    // 获取 .social-icons 元素
-    const socialIconsElement = document.querySelector(".social-icons");
-
     // 创建一个数组，用来存放生成的链接 HTML
     const socialIconLinks = config.content.masterInfo.socialLink.enable
         .map((key) => {
@@ -49,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         .filter(Boolean); // 过滤掉无效的值
 
     // 将生成的链接插入到 .social-icons 元素中
-    socialIconsElement.innerHTML = socialIconLinks.join("");
+    element.socialIcons.innerHTML = socialIconLinks.join("");
 
     /* 生成社交链接图标 End */
 
@@ -65,9 +69,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     /* 生成页脚 ICP 备案信息 */
 
-    // 获取 .icp-info 元素
-    const icpInfoElement = document.querySelector(".icp-info");
-
     // 创建一个数组，用来存放生成的链接 HTML
     const icpInfoLinks = config.content.icp.enable
         .map((key) => {
@@ -82,18 +83,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         .filter(Boolean); // 过滤掉无效的值
 
     // 将生成的链接用 fa-shield 图标连接，并插入到 .icp-info 元素中
-    icpInfoElement.innerHTML = icpInfoLinks.join(` <i class="fa-solid fa-shield"></i> `);
+    element.icpInfo.innerHTML = icpInfoLinks.join(` <i class="fa-solid fa-shield"></i> `);
 
     /* 生成页脚 ICP 备案信息 End */
 
     /* 检测页脚的重复作者名称并修正 */ // (好像没啥用
 
-    // 获取 .webmaster-info 元素
-    const webmasterInfoElement = document.querySelector(".webmaster-info");
-
+    // 球球你别改这里可以嘛呜呜呜 (＞﹏＜)
     if (config.content.masterInfo.name === "成成0v0") {
-        // 球球你别改这里可以嘛呜呜呜 (＞﹏＜)
-        webmasterInfoElement.innerHTML = "";
+        element.webmasterInfo.innerHTML = "";
     }
 
     /* 检测页脚的重复作者名称并修正 End */

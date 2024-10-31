@@ -26,6 +26,24 @@ function getWebsiteConfig() {
 const config = getWebsiteConfig();
 config.init();
 
+// 对象递归初始化代理
+function autoInitObject() {
+    return new Proxy({}, {
+        get(target, prop) {
+            // 如果属性不存在，则递归返回一个新的代理
+            if (!(prop in target)) {
+                target[prop] = autoInitObject();
+            }
+            return target[prop];
+        },
+        set(target, prop, value) {
+            // 正常设置属性
+            target[prop] = value;
+            return true;
+        }
+    });
+}
+
 // Markdown 渲染器
 function renderMarkdown() {
     // 获取页面中的所有 .markdown-content 元素
@@ -61,41 +79,5 @@ function renderMarkdown() {
     });
 }
 
-// 复制文本
-function copy(data) {
-    let input = document.createElement("input");
-    input.setAttribute("readonly", "readonly");
-    input.value = data;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand("Copy");
-    document.body.removeChild(input);
-    swal("复制成功！");
-}
-
-// 显示邮箱
-function showEmail() {
-    swal({
-        title: "E-mail",
-        text: "chengcheng@miao.ms",
-        buttons: ["复制", true],
-    }).then((OK) => {
-        if (OK) {
-            /* empty */
-        } else {
-            copy("chengcheng@miao.ms");
-        }
-    });
-}
-
-// 显示 URL
-function showPageUrl() {
-    const url = window.location.href;
-    swal({
-        title: "URL",
-        text: url,
-    });
-}
-
 // 将方法挂载到全局对象 window
-window.showEmail = showEmail;
+window.autoInitObject = autoInitObject;
