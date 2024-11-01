@@ -28,7 +28,6 @@ config.init();
 
 // 对象递归初始化代理
 function autoInitObject() {
-    const trackedKeys = new Set(); // 记录设置的属性
     return new Proxy({}, {
         get(target, prop) {
             // 如果属性不存在，则递归返回一个新的代理
@@ -38,13 +37,9 @@ function autoInitObject() {
             return target[prop];
         },
         set(target, prop, value) {
-            trackedKeys.add(prop); // 记录设置的属性
             // 正常设置属性
             target[prop] = value;
             return true;
-        },
-        isEmpty() {
-            return trackedKeys.size === 0;
         }
     });
 }
