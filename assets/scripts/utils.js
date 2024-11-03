@@ -1,4 +1,4 @@
-/* global swal, marked */
+/* global swal, markdownit */
 
 // 获取网站配置
 function getWebsiteConfig() {
@@ -44,6 +44,11 @@ function autoInitObject() {
     });
 }
 
+// 初始化 markdown-it 实例
+const md = new markdownit({
+    html: true // 允许 HTML 标签
+});
+
 // Markdown 渲染器
 function renderMarkdown() {
     // 获取页面中的所有 .markdown-content 元素
@@ -63,8 +68,8 @@ function renderMarkdown() {
                     return response.text();
                 })
                 .then((markdownContent) => {
-                    // 使用 marked 库将 Markdown 转换为 HTML
-                    const renderedHTML = marked.parse(markdownContent);
+                    // 使用 markdown-it 库将 Markdown 转换为 HTML
+                    const renderedHTML = md.render(markdownContent);
 
                     // 使用渲染后的 HTML 直接替换原始内容
                     element.innerHTML = renderedHTML;
