@@ -7,12 +7,15 @@
         <meta name="description" content="Content Info" />
         <link rel="icon" href="./favicon.ico" />
 
+        <link rel="stylesheet" href="./assets/styles/loaders.css" />
+        <iframe id="global-loader-iframe" src="./loaders/global.html"></iframe>
+
         <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.css" />
 
         <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/alpinejs/3.9.0/cdn.min.js" defer></script>
         <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/sweetalert/2.1.2/sweetalert.min.js"></script>
         <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/markdown-it/12.3.2/markdown-it.js"></script>
 
         <link rel="stylesheet" href="./assets/styles/elements.css" />
         <link rel="stylesheet" href="./assets/styles/index.css" />
@@ -72,8 +75,35 @@
             <span class="line-break"><i class="fa-solid fa-ellipsis"></i></span>
             <!-- 球球你别改这里可以嘛呜呜呜 (＞﹏＜) -->
             <!-- “[Loading...]”的实际内容可以在 config.json 的 masterInfo.info 项中修改哦~ -->
-            <span>本站由 <span class="webmaster-info"><a :href="config.content.masterInfo.website" target="_blank" x-text="config.content.masterInfo.name">[Loading...]</a> 和 </span><a href="https://hic.top" target="_blank">成成0v0</a> 用 <i class="fa-solid fa-heart"></i> 制作</span>
+            <span
+                >本站由 <span class="webmaster-info"><a :href="config.content.masterInfo.website" target="_blank" x-text="config.content.masterInfo.name">[Loading...]</a> 和 </span><a href="https://hic.top" target="_blank">成成0v0</a> 用 <i class="fa-solid fa-heart"></i> 制作</span
+            >
             <span>Powered by <a href="https://github.com/ChengCheng0v0/ACG-Home" target="_blank">ACG-Home</a></span>
         </div>
+
+        <iframe id="theme-color-loader-iframe" src="./loaders/theme-color.html"></iframe>
+
+        <script>
+            // 隐藏滚动条
+            document.body.style.overflow = "hidden";
+
+            // 加载动画的最短显示时间
+            const minimumLoadingTime = 1800;
+            const startTime = new Date().getTime();
+
+            // 页面加载完成后计算是否满足最短时间
+            window.addEventListener("load", function () {
+                const currentTime = new Date().getTime();
+                const elapsedTime = currentTime - startTime;
+
+                // 如果页面加载时间少于最短显示时间则延迟隐藏加载动画
+                const delay = Math.max(0, minimumLoadingTime - elapsedTime);
+                setTimeout(() => {
+                    // document.querySelector(".content").style.display = "block"; //显示网站内容
+                    document.getElementById("global-loader-iframe").className = "end"; // 播放结束动画
+                    document.body.style.overflow = "unset"; // 恢复显示滚动条
+                }, delay);
+            });
+        </script>
     </body>
 </html>

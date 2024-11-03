@@ -24,19 +24,19 @@
 使用配置文件还有一个好处就是你可以非常轻松地进行版本升级，每次更新的时候只需要对配置文件进行手动修改就可以做到基本内容的无缝切换。  
 关于如何修改网站配置，请参见下面的 [如何使用/修改网站配置](#修改网站配置) 章节。
 
-网站的内容和公告区域是使用 [Marked](https://github.com/markedjs/marked) 将 Markdown 渲染为 HTML 的（就像 GitHub 主页的 README 一样），这么做的好处是大大降低了网站编写的复杂性，并且这个渲染器不会过滤掉 HTML 内容（这意味着你只需要编写简短的 Markdown 文档就可以做出复杂的页面内容！）。
+网站的内容和公告区域是使用 [markdown-it](https://github.com/markdown-it/markdown-it) 将 Markdown 渲染为 HTML 的（就像 GitHub 主页的 README 一样），这么做的好处是大大降低了网站编写的复杂性，并且这个渲染器不会过滤掉 HTML 内容（这意味着你只需要编写简短的 Markdown 文档就可以做出复杂的页面内容！）。
 
 项目的代码有着较高的可读性，加上其内容与 HTML 样式分离的设计使得你可以轻松地将它修改成你想要的样子！  
 网站只有一个简单的最小化框架，你可以在这个基础上增加任何你喜欢的内容，而不会被大型项目的局限性和复杂性所影响。
 
 这个项目目前正处在重构后的第一个大版本！所以未来还会在保留当前设计理念的情况下增加很多模块化的功能，如果感兴趣的话欢迎点个 Star 和关注，谢谢！\(>▽
 
-有任何问题欢迎提 Issue！有希望添加的功能或者有任何建议的话让我们 Discussions 见！
+有任何问题欢迎提 Issue！有希望添加的功能或者有任何建议的话请发起讨论！
 
 ### 使用的项目
 
 - 语言: 前端三件套 (HTML, CSS, JavaScript)
-- Markdown 渲染器: [Marked.js](https://github.com/markedjs/marked)
+- Markdown 渲染器: [markdown-it.js](https://github.com/markdown-it/markdown-it)
 - 文本打字效果: [Typed.js](https://github.com/mattboldt/typed.js)
 - 字体图标: FontAwesome
 - 字体: Linotte + 汉仪正圆
@@ -67,14 +67,14 @@
 <div class="markdown-content" src="./assets/markdown/content-page.md"></div>
 ```
 
-这段代码使用了一个纯净的 `div` 元素来包裹内容，Marked 解析后的 HTML 元素都将插入到这个 `div` 中。  
+这段代码使用了一个纯净的 `div` 元素来包裹内容，markdown-it 解析后的 HTML 元素都将插入到这个 `div` 中。  
 其 `src` 属性定义了需要渲染的源 `.md` 文件的相对或绝对路径。这个路径指向的可以是一个本地 URL 也可以是一个远程 URL，渲染器会通过 `fetch` 获取 Markdown 源文件并进行渲染。
 
 因为渲染器会在页面 DOM 加载完成的时候查找页面内的所有 `.markdown-content` 元素并将其指定的内容渲染出来，所以你可以在页面内任何地方插入这样的元素！
 
 项目中自带了两个需要渲染的 Markdown 文件：`/assets/markdown/content-page.md` 和 `/assets/markdown/announcement.md`，它们分别存放了网页主要内容区域和侧边栏公告卡片的 Markdown 内容。
 
-关于渲染器的更多可自定义选项，请查看 [Marked.js](https://github.com/markedjs/marked) 的官方文档！我会在未来为这个项目加入更多可用的扩展 Markdown 语法。
+关于渲染器的更多可自定义选项，请查看 [markdown-it.js](https://github.com/markdown-it/markdown-it) 的官方文档！
 
 ### 编写主要内容区域的 Markdown 文档时的最佳实践
 

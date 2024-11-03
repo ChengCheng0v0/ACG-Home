@@ -1,0 +1,87 @@
+/* - 全局加载动画 */
+#global-loader-iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 10010;
+    background-color: #cdb09c; /* 设置成与加载动画背景相同的颜色以一定程度防止短暂闪现 */
+}
+
+#global-loader-iframe {
+    transition: transform 0.5s ease;
+}
+
+#global-loader-iframe.start {
+    animation: loaderStart 0.3s ease-out forwards;
+}
+
+#global-loader-iframe.end {
+    animation: loaderEnd 0.5s ease-out forwards;
+}
+
+@keyframes loaderStart {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes loaderEnd {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+/* - 全局加载动画 End */
+
+/* - 配色方案加载动画 */
+#theme-color-loader-iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 10009;
+    background-color: #cdb09c; /* 设置成与加载动画背景相同的颜色以一定程度防止短暂闪现 */
+
+    transform: translateY(100%);
+}
+
+#theme-color-loader-iframe {
+    transition: transform 0.5s ease;
+}
+
+#theme-color-loader-iframe.start {
+    animation: loaderStart 0.3s ease-out forwards;
+}
+
+#theme-color-loader-iframe.end {
+    animation: loaderEnd 0.5s ease-out forwards;
+}
+
+@keyframes loaderStart {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes loaderEnd {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+/* - 配色方案加载动画 End */
