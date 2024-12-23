@@ -1,0 +1,1 @@
+{ "printWidth": 480, "tabWidth": 4, "semi": true, "singleQuote": false, "quoteProps": "as-needed", "trailingComma": "es5", "bracketSpacing": true, "arrowParens": "avoid", "proseWrap": "never", "vueIndentScriptAndStyle": true, "endOfLine": "lf", "embeddedLanguageFormatting": "off" }
