@@ -1,8 +1,8 @@
 {
-    "title": "成成0v0 の 个人网站",
+    "title": "我是网站的标题~",
     "theme": {
         "theme": "defdark",
-        "displayName": "Default",
+        "displayName": "ACG-Home",
         "colors": {
             "autoSwitch": {
                 "displayName": "Auto",
@@ -19,7 +19,7 @@
         }
     },
     "masterInfo": {
-        "name": "成成0v0",
+        "name": "<站长名字>",
         "avatar": "./assets/images/avatar.png",
         "website": "https://hic.top",
         "socialLink": {

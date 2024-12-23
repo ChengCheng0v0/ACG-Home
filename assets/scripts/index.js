@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 创建一个数组，用来存放生成的链接 HTML
     const socialIconLinks = config.content.masterInfo.socialLink.enable
-        .map((key) => {
+        .map(key => {
             const icon = config.content.masterInfo.socialLink.icon[key]; // 获取对应的 icon
             const link = config.content.masterInfo.socialLink.link[key]; // 获取对应的 link
             if (icon && link) {
@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 获取 Hitokoto 一言
     fetch("https://v1.hitokoto.cn")
-        .then((response) => response.json())
-        .then((data) => {
+        .then(response => response.json())
+        .then(data => {
             const hitokoto = document.querySelector("#hitokoto-text");
             hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`;
             hitokoto.innerText = data.hitokoto;
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 创建一个数组，用来存放生成的链接 HTML
     const icpInfoLinks = config.content.icp.enable
-        .map((key) => {
+        .map(key => {
             const code = config.content.icp.info.code[key]; // 获取对应的 code
             const link = config.content.icp.info.link[key]; // 获取对应的 link
             if (code && link) {

@@ -60,7 +60,7 @@ class ThemeManager {
 
         // 解析基本样式 URL 并赋值给数组
         styleLinks = metaData.files.styles
-            .map((key) => {
+            .map(key => {
                 if (key) {
                     // 创建 <link> 标签
                     return `<link rel="stylesheet" href="${themePath}/styles/${key}" />`;
@@ -72,7 +72,7 @@ class ThemeManager {
 
         // 解析配色方案样式 URL 并插入数组
         metaData.colors.index
-            .map((key) => {
+            .map(key => {
                 let targetColor = localStorage.getItem("theme.color"); // 存储目标配色方案的变量
 
                 // 如果目标配色方案为保留关键字“!autoSwitch”（自动切换配色方案），将其改为实际需要加载的配色方案
@@ -90,7 +90,7 @@ class ThemeManager {
                 // 根据目标配色方案决定是否生成标签
                 if (styles && targetColor === key) {
                     // 如果 styles 是数组，生成多个 link 标签
-                    return styles.map((file) => `<link rel="stylesheet" href="${themePath}/colors/${key}/styles/${file}" />`).join(""); // 将生成的所有 link 标签拼接成字符串
+                    return styles.map(file => `<link rel="stylesheet" href="${themePath}/colors/${key}/styles/${file}" />`).join(""); // 将生成的所有 link 标签拼接成字符串
                 } else if (localStorage.getItem("theme.color") !== key) {
                     console.log("%c[I]%c " + `跳过了生成 ${key} 配色方案样式标签的步骤，因为 key 的值不符合用户设置`, "background-color: #00896c;", "");
                     return;
@@ -99,7 +99,7 @@ class ThemeManager {
                 throw new Error("配色方案样式 Tag 生成失败，无法继续执行操作");
             })
             .filter(Boolean) // 过滤掉无效的值
-            .forEach((linkTags) => {
+            .forEach(linkTags => {
                 styleLinks.push(linkTags); // 将生成的 link 标签插入到数组中
             });
 
@@ -110,7 +110,7 @@ class ThemeManager {
 
         // 解析基本脚本 URL 并赋值给数组
         scriptLinks = metaData.files.scripts
-            .map((key) => {
+            .map(key => {
                 if (key) {
                     // 创建 <script> 标签
                     return `<script src="${themePath}/scripts/${key}"></script>`;
@@ -122,7 +122,7 @@ class ThemeManager {
 
         // 解析配色方案脚本 URL 并插入数组
         metaData.colors.index
-            .map((key) => {
+            .map(key => {
                 let targetColor = localStorage.getItem("theme.color"); // 存储目标配色方案的变量
 
                 // 如果目标配色方案为保留关键字“!autoSwitch”（自动切换配色方案），将其改为实际需要加载的配色方案
@@ -140,7 +140,7 @@ class ThemeManager {
                 // 根据目标配色方案决定是否生成标签
                 if (scripts && targetColor === key) {
                     // 如果 scripts 是数组，生成多个 script 标签
-                    return scripts.map((file) => `<script src="${themePath}/colors/${key}/scripts/${file}"></script>`).join(""); // 将生成的所有 link 标签拼接成字符串
+                    return scripts.map(file => `<script src="${themePath}/colors/${key}/scripts/${file}"></script>`).join(""); // 将生成的所有 link 标签拼接成字符串
                 } else if (localStorage.getItem("theme.color") !== key) {
                     console.log("%c[I]%c " + `跳过了生成 ${key} 配色方案脚本标签的步骤，因为 key 的值不符合用户设置`, "background-color: #00896c;", "");
                     return;
@@ -149,7 +149,7 @@ class ThemeManager {
                 throw new Error("配色方案脚本 Tag 生成失败，无法继续执行操作");
             })
             .filter(Boolean) // 过滤掉无效的值
-            .forEach((linkTags) => {
+            .forEach(linkTags => {
                 scriptLinks.push(linkTags); // 将生成的 link 标签插入到数组中
             });
 
@@ -217,7 +217,7 @@ class ThemeManager {
 
     runScripts() {
         // 遍历 <theme> 中的所有 <script> 标签
-        document.querySelectorAll("theme > script").forEach((script) => {
+        document.querySelectorAll("theme > script").forEach(script => {
             // 获取当前 script 标签的 src
             const src = script.src;
 
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 创建一个数组，用来存放生成的按钮 HTML
     const themeButtons = config.content.theme.colors.enable
-        .map((key) => {
+        .map(key => {
             let displayName;
             let icon;
             let color;

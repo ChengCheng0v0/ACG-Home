@@ -92,8 +92,8 @@ class MetingJSElement extends HTMLElement {
         let url = this.api.replace(":server", this.meta.server).replace(":type", this.meta.type).replace(":id", this.meta.id).replace(":auth", this.meta.auth).replace(":r", Math.random());
 
         fetch(url)
-            .then((res) => res.json())
-            .then((result) => this._loadPlayer(result));
+            .then(res => res.json())
+            .then(result => this._loadPlayer(result));
     }
 
     _loadPlayer(data) {
