@@ -1,15 +1,14 @@
 ## ACG Home
 
-一个二次元风格的个人主页！  
+一个二次元风格的个人主页！
 
 ## 预览
 
-[https://acg-home.pages.dev](https://acg-home.pages.dev)
-
-![_20241016_002741.png](https://s2.loli.net/2024/10/16/fvapGBQDeRkzTHh.png)
+![预览](https://s2.loli.net/2024/11/10/nHRUIDs6pjLfkBz.png)
 
 > [!TIP]  
-> 上面的预览链接中的内容会即时同步 `main` 分支的更改，但预览图就不一定会及时更新了哦。
+> 此预览使用 [Liora](https://github.com/ChengCheng0v0/Liora) 主题，它是 ACG-Home 的官方推荐主题。  
+> 强烈建议在安装完本项目后立刻配置一个主题样式，因为默认主题实在是不太好看~~
 
 ---
 
@@ -63,7 +62,7 @@
 
 其实非常简单，只需要一个 class 为 `markdown-content` 的任意元素就行了！例如：
 
-``` html
+```html
 <div class="markdown-content" src="./assets/markdown/content-page.md"></div>
 ```
 
@@ -83,4 +82,4 @@
 ## 参与贡献
 
 直接提 PR 就行啦！  
-\(真的会有人对这个小破项目感兴趣吗 Σ(っ °Д °;)っ  \)
+\(真的会有人对这个小破项目感兴趣吗 Σ(っ °Д °;)っ \)
