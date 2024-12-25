@@ -80,7 +80,7 @@ body {
     width: 30%;
     margin-right: 16px;
 
-    transition: margin-top, ease, 0.2s;
+    transition: margin-top, ease-in, 0.2s;
 }
 
 /* 右侧区域 */
