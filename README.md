@@ -10,6 +10,8 @@
 > 此预览使用 [Liora](https://github.com/ChengCheng0v0/Liora) 主题，它是 ACG-Home 的官方推荐主题。  
 > 强烈建议在安装完本项目后立刻配置一个主题样式，因为默认主题实在是不太好看~~
 
+你也可以看看[我的个人网站 (hic.top)](https://hic.top)，它也使用 ACG-Home + Liora Theme 的组合！
+
 ---
 
 项目的开发工作会在 `develop` 分支中进行，对于最新的改动预览请查看：[https://develop.acg-home.pages.dev](https://develop.acg-home.pages.dev)。
