@@ -79,6 +79,8 @@ body {
     max-width: 350px;
     width: 30%;
     margin-right: 16px;
+
+    transition: margin-top, ease, 0.2s;
 }
 
 /* 右侧区域 */
