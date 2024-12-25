@@ -47,6 +47,32 @@ function autoInitObject() {
     );
 }
 
+// 节流函数
+// NOTE: 节流的作用是：无论事件触发频率多高，目标函数都只会在指定时间间隔内执行一次。
+function throttle(func, interval) {
+    let lastTime = 0;
+    return function (...args) {
+        const now = Date.now(); // 当前时间
+        if (now - lastTime >= interval) {
+            func.apply(this, args); // 如果距离上次执行的时间超过间隔，执行函数
+            lastTime = now; // 更新上次执行时间
+        }
+    };
+}
+
+// 防抖函数
+// NOTE: 防抖的作用是：在事件触发后的 delay 时间内没有再次触发时，才会执行目标函数。
+function debounce(func, delay) {
+    let timer;
+    return function (...args) {
+        const context = this;
+        clearTimeout(timer); // 每次触发事件都清除之前的定时器
+        timer = setTimeout(() => {
+            func.apply(context, args); // 重新设定定时器并调用函数
+        }, delay);
+    };
+}
+
 // 初始化 markdown-it 实例
 const md = new markdownit({
     html: true, // 允许 HTML 标签

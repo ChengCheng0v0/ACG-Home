@@ -1,4 +1,5 @@
 /* global config, Alpine, getWebsiteConfig, Typed, swal, renderMarkdown */
+/* global config, throttle, debounce, Alpine, getWebsiteConfig, Typed, swal, renderMarkdown */
 
 // 初始化 Alpine
 document.addEventListener("alpine:init", () => {
