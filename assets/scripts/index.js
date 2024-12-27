@@ -1,4 +1,4 @@
-/* global config, Alpine, getWebsiteConfig, Typed, swal, renderMarkdown */
+/* global config, throttle, debounce, Alpine, getWebsiteConfig, Typed, swal, renderMarkdown */
 
 // 初始化 Alpine
 document.addEventListener("alpine:init", () => {
@@ -8,10 +8,19 @@ document.addEventListener("alpine:init", () => {
 document.addEventListener("DOMContentLoaded", async () => {
     // 获取 DOM 元素
     var element = {
+        pageHead: document.querySelector(".page-head"),
+        leftArea: document.querySelector(".primary-container > .left-area"),
         socialIcons: document.querySelector(".social-icons"),
         icpInfo: document.querySelector(".icp-info"),
         webmasterInfo: document.querySelector(".webmaster-info"),
     };
+
+    // 查询屏幕宽度并设置 Flag
+    var mobileMode = false;
+    if (window.matchMedia("(max-width: 899px)").matches) {
+        mobileMode = true;
+        console.log("%c[I]%c " + `mobileMode: true`, "background-color: #00896c;", "");
+    }
 
     // 设置网站标题
     document.title = config.content.title;
@@ -66,6 +75,21 @@ document.addEventListener("DOMContentLoaded", async () => {
             hitokoto.innerText = data.hitokoto;
         })
         .catch(console.error);
+
+    // 非移动端下自动悬浮左侧区域
+    if (!mobileMode) {
+        const pageHeadHeight = element.pageHead.clientHeight;
+        const updateFloatPageHeadMargin = debounce(() => {
+            element.leftArea.style.marginTop = window.scrollY - pageHeadHeight + "px";
+        }, 60);
+        document.addEventListener("scroll", () => {
+            if (window.scrollY >= pageHeadHeight) {
+                updateFloatPageHeadMargin();
+            } else {
+                element.leftArea.style.marginTop = "unset";
+            }
+        });
+    }
 
     /* 生成页脚 ICP 备案信息 */
 
