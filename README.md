@@ -65,7 +65,7 @@
 其实非常简单，只需要一个 class 为 `markdown-content` 的任意元素就行了！例如：
 
 ```html
-<div class="markdown-content" src="./assets/markdown/content-page.md"></div>
+<div class="markdown-content" src="/assets/markdown/content-page.md"></div>
 ```
 
 这段代码使用了一个纯净的 `div` 元素来包裹内容，markdown-it 解析后的 HTML 元素都将插入到这个 `div` 中。  

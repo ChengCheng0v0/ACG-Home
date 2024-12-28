@@ -1,25 +1,25 @@
 /* - 全局样式 */
 @font-face {
     font-family: "Linotte";
-    src: url("../fonts/Linotte\ Regular.otf") format("opentype");
+    src: url("/assets/fonts/Linotte\ Regular.otf") format("opentype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Linotte";
-    src: url("../fonts/Linotte\ Bold.otf") format("opentype");
+    src: url("/assets/fonts/Linotte\ Bold.otf") format("opentype");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "HYZhengYuan";
-    src: url("../fonts/HYZhengYuan-55W.ttf") format("opentype");
+    src: url("/assets/fonts/HYZhengYuan-55W.ttf") format("opentype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "HYZhengYuan";
-    src: url("../fonts/HYZhengYuan-85S.ttf") format("opentype");
+    src: url("/assets/fonts/HYZhengYuan-85S.ttf") format("opentype");
     font-weight: bold;
 }
 
@@ -48,7 +48,7 @@ body {
     width: 100%;
     height: 320px;
     background-color: #49b1f5;
-    background-image: url(../images/backgrounds/page-head/wallhaven-9delkw.jpg);
+    background-image: url(/assets/images/backgrounds/page-head/wallhaven-9delkw.jpg);
     background-size: cover;
     background-position: center 85%; /* 请根据需要调整图片位置 */
     /* background-attachment: fixed; */
@@ -119,7 +119,7 @@ body {
     height: 500px;
 
     background-color: #aaaaaa;
-    mask: url(../images/content_page_sticker.png) no-repeat center;
+    mask: url(/assets/images/content_page_sticker.png) no-repeat center;
     mask-size: contain;
     z-index: 0;
 }

@@ -20,7 +20,7 @@
     },
     "masterInfo": {
         "name": "<站长名字>",
-        "avatar": "./assets/images/avatar.png",
+        "avatar": "/assets/images/avatar.png",
         "website": "https://hic.top",
         "socialLink": {
             "link": {
