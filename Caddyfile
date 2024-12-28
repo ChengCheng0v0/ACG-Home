@@ -1,0 +1,11 @@
+http://127.0.0.1:8081 {
+    root * .
+    file_server
+
+    @pages {
+        path_regexp ^/p/.+
+        not file
+    }
+
+    rewrite @pages /index.html
+}
