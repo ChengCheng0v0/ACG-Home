@@ -1,19 +1,21 @@
 /* global renderMarkdown*/
 
-// 根据路径更新正文
+// 根据路径更新内容区域的 Markdown
 function updateContent(path) {
     const markdown = document.getElementById("content-page-markdown");
     if (path.startsWith("/p/")) {
         switch (path) {
+            // 示例路由
             case "/p/example_route":
-                console.log("%c[I]%c " + "触发示例路由页面", "background-color: #00896c;", "");
                 markdown.setAttribute("src", "/assets/markdown/static/example_route.md");
                 renderMarkdown(document.getElementById("content-page-markdown"));
                 break;
+            // 错误信息: fetch_failed
             case "/p/error_fetch_failed":
                 markdown.setAttribute("src", "/assets/markdown/static/fetch_failed.md");
                 renderMarkdown(document.getElementById("content-page-markdown"));
                 break;
+            // 其它目标
             default:
                 markdown.setAttribute("src", "/assets/markdown/" + path.replace(/[/p/]/g, "") + ".md");
 
@@ -22,14 +24,35 @@ function updateContent(path) {
                     renderMarkdown(document.getElementById("content-page-markdown"));
                 });
         }
+    } else if (path.startsWith("/")) {
+        // 根目录
+        markdown.setAttribute("src", "/assets/markdown/content-page.md");
+        renderMarkdown(document.getElementById("content-page-markdown"));
     } else {
-        console.log("%c[I]%c " + "位于根目录中，不更改内容区域的 Markdown 文件", "background-color: #00896c;", "");
+        console.warn("%c[W]%c " + `路由器获取到了一个未定义的目标: ${path}，当前操作为 '根据路径更新内容区域的 Markdown'，未发生任何事情`, "background-color: #e98b2a;", "");
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     // 首次加载时触发更新
     updateContent(location.pathname);
-    // 路径变化时触发更新
-    window.addEventListener("popstate", () => updateContent(location.pathname));
+    // URL 更新触发更新
+    window.addEventListener("popstate", () => {
+        updateContent(location.pathname);
+    });
+
+    // 添加全局点击监听器
+    document.addEventListener("click", event => {
+        const link = event.target.closest("a"); // 找到点击的最近 <a> 元素
+        if (
+            // 超链接行为我有三不改:
+            link && // 1. 不存在的我不改，它都没有我改啥哇
+            link.target !== "_blank" && // 2. target 是 _blank 的不改，因为它善，它在新标签页打开我管它干嘛
+            (link.href.startsWith(location.origin + "/p/") || link.href.startsWith(location.origin)) // 3. 不指向 '/p/' 或 '/' 开头的我不改，因为它恶，不指向 '/p/'' 容易出事啊
+        ) {
+            event.preventDefault(); // 阻止默认行为
+            history.pushState({}, "", link.href); // 更新浏览器地址栏
+            updateContent(location.pathname); // 使用路由行为加载新内容
+        }
+    });
 });
