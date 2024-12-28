@@ -15,7 +15,7 @@ class ThemeManager {
     // 解析主题
     parse() {
         // 构建主题目录
-        themePath = window.location.href + "/assets/themes/" + config.content.theme.theme;
+        themePath = window.location.origin + "/assets/themes/" + config.content.theme.theme;
         console.log("%c[I]%c " + `Theme Path: ${themePath}`, "background-color: #00896c;", "");
 
         // 使用 XML 获取主题的元数据
