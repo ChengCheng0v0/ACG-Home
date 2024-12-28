@@ -80,43 +80,57 @@ const md = new markdownit({
 
 // Markdown 渲染器
 function renderMarkdown(target) {
-    let markdownElements;
+    return new Promise((resolve, reject) => {
+        let markdownElements;
 
-    if (target) {
-        // 如果指定了 target，则确保它是一个可迭代的 NodeList
-        markdownElements = target instanceof NodeList ? target : [target];
-    } else {
-        // 否则获取页面中的所有 .markdown-content 元素
-        markdownElements = document.querySelectorAll(".markdown-content");
-    }
-
-    // 遍历每个元素，获取其 src 指定的 Markdown 文件并渲染
-    markdownElements.forEach(element => {
-        const src = element.getAttribute("src"); // 获取 src 属性
-
-        if (src) {
-            // 使用 fetch 来获取 .md 文件内容
-            fetch(src)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`无法获取 Markdown 文件: ${src}`);
-                    }
-                    return response.text();
-                })
-                .then(markdownContent => {
-                    // 使用 markdown-it 库将 Markdown 转换为 HTML
-                    const renderedHTML = md.render(markdownContent);
-
-                    // 使用渲染后的 HTML 直接替换原始内容
-                    element.innerHTML = renderedHTML;
-                })
-                .catch(error => {
-                    console.error(error);
-                    element.innerHTML = `<span style='color: red;'>加载 Markdown 文件失败: ${src}</span>`;
-                });
+        if (target) {
+            // 如果指定了 target，则确保它是一个可迭代的 NodeList
+            markdownElements = target instanceof NodeList ? target : [target];
         } else {
-            element.innerHTML = "<span style='color: red;'>加载 Markdown 文件失败: 未在 src 属性中指定文件路径</span>";
+            // 否则获取页面中的所有 .markdown-content 元素
+            markdownElements = document.querySelectorAll(".markdown-content");
         }
+
+        if (markdownElements.length === 0) {
+            reject(new Error("未找到需要渲染的 Markdown 元素"));
+            return;
+        }
+
+        // 遍历每个元素，获取其 src 指定的 Markdown 文件并渲染
+        const promises = Array.from(markdownElements).map(element => {
+            const src = element.getAttribute("src"); // 获取 src 属性
+
+            if (src) {
+                // 返回 fetch 的 Promise
+                return fetch(src)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`无法获取 Markdown 文件: ${src}`);
+                        }
+                        return response.text();
+                    })
+                    .then(markdownContent => {
+                        // 使用 markdown-it 库将 Markdown 转换为 HTML
+                        const renderedHTML = md.render(markdownContent);
+
+                        // 使用渲染后的 HTML 直接替换原始内容
+                        element.innerHTML = renderedHTML;
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        element.innerHTML = `<span style='color: red;'>加载 Markdown 文件失败: ${src}</span>`;
+                        throw error; // 将错误传递到外部
+                    });
+            } else {
+                element.innerHTML = "<span style='color: red;'>加载 Markdown 文件失败: 未在 src 属性中指定文件路径</span>";
+                return Promise.reject(new Error("未在 src 属性中指定文件路径"));
+            }
+        });
+
+        // 处理所有渲染的 Promise
+        Promise.all(promises)
+            .then(() => resolve()) // 全部成功
+            .catch(reject); // 任意一个失败
     });
 }
 
