@@ -79,9 +79,16 @@ const md = new markdownit({
 });
 
 // Markdown 渲染器
-function renderMarkdown() {
-    // 获取页面中的所有 .markdown-content 元素
-    const markdownElements = document.querySelectorAll(".markdown-content");
+function renderMarkdown(target) {
+    let markdownElements;
+
+    if (target) {
+        // 如果指定了 target，则确保它是一个可迭代的 NodeList
+        markdownElements = target instanceof NodeList ? target : [target];
+    } else {
+        // 否则获取页面中的所有 .markdown-content 元素
+        markdownElements = document.querySelectorAll(".markdown-content");
+    }
 
     // 遍历每个元素，获取其 src 指定的 Markdown 文件并渲染
     markdownElements.forEach(element => {
