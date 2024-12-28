@@ -90,7 +90,7 @@ body {
 }
 /* - 主体容器 End */
 
-/* 内容版块 */
+/* 内容区域 */
 .primary-container > .right-area > .content-page {
     position: relative;
     width: 100%;
@@ -107,7 +107,7 @@ body {
     }
 }
 
-/* 内容板块的贴纸 */
+/* 内容区域的贴纸 */
 .primary-container > .right-area > .content-page::before {
     content: "";
     position: absolute;
