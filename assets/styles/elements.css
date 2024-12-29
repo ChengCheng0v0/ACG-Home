@@ -116,4 +116,28 @@ a {
     transform: translate(0%, -20%);
     pointer-events: none;
 }
+
+a.loading {
+    color: #2a92d8;
+    animation: link-loading 0.5s infinite;
+}
+
+@keyframes link-loading {
+    0% {
+        background-size: 0 2px;
+        background-position: left bottom;
+    }
+    30% {
+        background-size: 100% 2px;
+        background-position: left bottom;
+    }
+    70% {
+        background-size: 100% 2px;
+        background-position: right bottom;
+    }
+    100% {
+        background-size: 0 2px;
+        background-position: right bottom;
+    }
+}
 /* - 超链接 End */

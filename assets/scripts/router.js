@@ -50,9 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
             link.target !== "_blank" && // 2. target 是 _blank 的不改，因为它善，它在新标签页打开我管它干嘛
             (link.href.startsWith(location.origin + "/p/") || link.href.startsWith(location.origin)) // 3. 不指向 '/p/' 或 '/' 开头的我不改，因为它恶，不指向 '/p/'' 容易出事啊
         ) {
+            link.classList.add("loading"); // 开始加载动画
+
             event.preventDefault(); // 阻止默认行为
             history.pushState({}, "", link.href); // 更新浏览器地址栏
             updateContent(location.pathname); // 使用路由行为加载新内容
+
+            // link.classList.remove("loading"); // 停止加载动画
         }
     });
 });
