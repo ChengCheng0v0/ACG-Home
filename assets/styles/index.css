@@ -93,6 +93,8 @@ body {
 /* 内容区域 */
 .primary-container > .right-area > .content-page {
     position: relative;
+    overflow: hidden;
+    min-height: 80%;
     width: 100%;
     margin-top: 16px;
     border-radius: 12px;
@@ -242,7 +244,6 @@ body {
 }
 /* - 主题设置 End */
 /* - 浏览设置 End */
-
 /* - 左侧卡片 End */
 
 /* - 页脚 */
