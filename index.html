@@ -10,6 +10,29 @@
         <link rel="stylesheet" href="/assets/styles/loaders.css" />
         <iframe id="global-loader-iframe" src="/loaders/global.html"></iframe>
 
+        <script>
+            // 隐藏滚动条
+            document.body.style.overflow = "hidden";
+
+            // 加载动画的最短显示时间
+            const minimumLoadingTime = 1800;
+            const startTime = new Date().getTime();
+
+            // 页面加载完成后计算是否满足最短时间
+            window.addEventListener("load", function () {
+                const currentTime = new Date().getTime();
+                const elapsedTime = currentTime - startTime;
+
+                // 如果页面加载时间少于最短显示时间则延迟隐藏加载动画
+                const delay = Math.max(0, minimumLoadingTime - elapsedTime);
+                setTimeout(() => {
+                    // document.querySelector(".content").style.display = "block"; //显示网站内容
+                    document.getElementById("global-loader-iframe").className = "end"; // 播放结束动画
+                    document.body.style.overflow = "unset"; // 恢复显示滚动条
+                }, delay);
+            });
+        </script>
+
         <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.css" />
 
         <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/alpinejs/3.9.0/cdn.min.js" defer></script>
@@ -84,28 +107,5 @@
         </div>
 
         <iframe id="theme-color-loader-iframe" src="/loaders/theme-color.html"></iframe>
-
-        <script>
-            // 隐藏滚动条
-            document.body.style.overflow = "hidden";
-
-            // 加载动画的最短显示时间
-            const minimumLoadingTime = 1800;
-            const startTime = new Date().getTime();
-
-            // 页面加载完成后计算是否满足最短时间
-            window.addEventListener("load", function () {
-                const currentTime = new Date().getTime();
-                const elapsedTime = currentTime - startTime;
-
-                // 如果页面加载时间少于最短显示时间则延迟隐藏加载动画
-                const delay = Math.max(0, minimumLoadingTime - elapsedTime);
-                setTimeout(() => {
-                    // document.querySelector(".content").style.display = "block"; //显示网站内容
-                    document.getElementById("global-loader-iframe").className = "end"; // 播放结束动画
-                    document.body.style.overflow = "unset"; // 恢复显示滚动条
-                }, delay);
-            });
-        </script>
     </body>
 </html>
