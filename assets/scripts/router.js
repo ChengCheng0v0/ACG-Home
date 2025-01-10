@@ -56,7 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
             history.pushState({}, "", link.href); // 更新浏览器地址栏
             updateContent(location.pathname); // 使用路由行为加载新内容
 
-            // link.classList.remove("loading"); // 停止加载动画
+            // link.classList.remove("loading"); // 停止加载动画  NOTE: 这里对加载动画标签的移除应该是非必要的
+
+            // 移动至顶部
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth", // 平滑滚动
+            });
         }
     });
 });
