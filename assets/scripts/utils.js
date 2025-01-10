@@ -1,4 +1,4 @@
-/* global swal, markdownit */
+/* global swal, markdownit, picocmt */
 
 // 获取网站配置
 function getWebsiteConfig() {
@@ -115,6 +115,13 @@ function renderMarkdown(target) {
 
                         // 使用渲染后的 HTML 直接替换原始内容
                         element.innerHTML = renderedHTML;
+
+                        // 如果启用了 PicoCMT 扩展则对其进行重新初始化
+                        if (config.extars.picocmt === true) {
+                            setTimeout(() => {
+                                picocmt.init();
+                            }, 200);
+                        }
                     })
                     .catch(error => {
                         console.error(error);

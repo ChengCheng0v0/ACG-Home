@@ -51,5 +51,8 @@
             }
         },
         "enable": ["moegov", "china"]
+    },
+    "extars": {
+        "picocmt": false
     }
 }
