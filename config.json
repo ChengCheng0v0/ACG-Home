@@ -52,7 +52,7 @@
         },
         "enable": ["moegov", "china"]
     },
-    "extars": {
+    "extras": {
         "picocmt": false
     }
 }

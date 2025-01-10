@@ -117,7 +117,7 @@ function renderMarkdown(target) {
                         element.innerHTML = renderedHTML;
 
                         // 如果启用了 PicoCMT 扩展则对其进行重新初始化
-                        if (config.extars.picocmt === true) {
+                        if (config.content.extras.picocmt === true) {
                             setTimeout(() => {
                                 picocmt.init();
                             }, 200);
